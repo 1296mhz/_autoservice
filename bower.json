@@ -1,0 +1,27 @@
+{
+  "directory": "html/components",
+  "name": "_autoservice",
+  "homepage": "https://github.com/vugluskr86/_autoservice",
+  "authors": [
+    "vugluskr <vugluskr@onalone.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-calendar": "https://github.com/Serhioromano/bootstrap-calendar.git#~0.2.4",
+    "jstimezonedetect": "~1.0.5",
+    "bootstrap-datetimepicker": "https://github.com/Eonasdan/bootstrap-datetimepicker",
+    "eonasdan-bootstrap-datetimepicker": "https://github.com/Eonasdan/bootstrap-datetimepicker.git#~4.17.37",
+    "bootstrap": "~3.3.6",
+    "jquery-validation": "https://github.com/jzaefferer/jquery-validation.git#~1.14.0"
+  }
+}
