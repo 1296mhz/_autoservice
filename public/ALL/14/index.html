@@ -1,0 +1,373 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale = 1.0, user-scalable = no">
+	<title>Универсальный шаблон Landing Page | скачать шаблоны лендинг пэйдж на сайте Marketolog.me</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+	<link href="css/prettyPhoto.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="css/normalize.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="css/grid.css" type="text/css" media="screen">
+	
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
+	<script type="text/javascript" src="js/js.js"></script>
+	<script type="text/javascript" src="js/jquery.stellar.min.js"></script>
+	<script type="text/javascript" src="js/waypoints.min.js"></script>
+	
+	<!--[if lt IE 9]>
+		<script src="js/html5shiv.js"></script>
+		<script src="js/respond.src.js"></script>
+	<![endif]-->
+	
+	<script type="text/javascript">
+		$(document).ready(function(){	
+			$("#ajax-contact-form").submit(function() {
+				var str = $(this).serialize();		
+				$.ajax({
+					type: "POST",
+					url: "contact_form/contact_process.php",
+					data: str,
+					success: function(msg) {
+						// Message Sent - Show the 'Thank You' message and hide the form
+						if(msg == 'OK') {
+							result = '<div class="notification_ok">Your message has been sent. Thank you!</div>';
+							$("#fields").hide();
+						} else {
+							result = msg;
+						}
+						$('#note').html(result);
+					}
+				});
+				return false;
+			});
+
+		});		
+	</script>
+	
+	<script type="text/javascript">$($.date_input.initialize);</script>
+	
+</head>
+
+<body>
+
+<div class="menu">	
+	<div class="container clearfix">
+
+		<div id="logo" class="fleft">
+			<a href="javascript:void(0);"><img src="images/logo.png" /></a>
+		</div>
+		
+		<div id="nav" class="fright">
+			<ul class="navigation">
+				<li data-slide="1">Home</li>
+				<li data-slide="2">About</li>
+				<li data-slide="4">Work</li>
+				<li data-slide="6">Services</li>
+				<li data-slide="8">Contact</li>
+				<div class="clear"></div>
+			</ul>
+		</div>
+	
+	</div>
+</div>
+
+
+<div class="slide" id="slide1" data-slide="1" data-stellar-background-ratio="0.5">
+	<div class="effect_2 padding_slide1">
+		<div class="container clearfix">
+
+			<div id="content" class="grid_12">
+				<div class="filtr_bg">
+					<h1>Building</h1>
+					<h2>your business</h2>
+					<h3>growth & prosperity</h3>
+					<p>In hac habitasse platea dictumst. Phasellus sit amet enim nec risus consequat porttitor id a odio. Curabitur faucibus tortor sit amet velit dictum quis commodo risus interdum.</p>
+					<p>Maecenas in est ipsum, vitae elementum magna. Praesent euismod metus ut elit viverra tristique. Cras porta magna at mi viverra vitae cursus augue</p>
+				</div>
+				<a class="button" title="" data-slide="8">Contact Us</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+<div class="slide" id="slide2" data-slide="2" data-stellar-background-ratio="0.5">
+	
+	<div class="container clearfix">
+		
+		<div id="content" class="grid_12">
+			<h1><span>About</span></h1>
+		</div>
+		
+		<div class="grid_7">
+			<h4>Show how the amazing product work ?</h4>
+			<p>Morbi rutrum, elit ac fermentum egestas, tortor ante vestibulum est, eget scelerisque nisl velit eget tellus. Fusce porta facilisis luctus. Integer neque dolor, rhoncus nec euismod eget, pharetra et tortor. Nulla id pulvinar nunc. Vestibulum auctor nisl vel lectus ullamcorper sed pellentesque dolor eleifend. Praesent lobortis magna vel diam mattis sagittis. Mauris porta odio eu risus scelerisque id facilisis ipsum dictum.</p>
+			<p>Donec fringilla pharetra sapien eget imperdiet. Vivamus iaculis ultricies mauris id posuere. Praesent mollis tincidunt diam, in sagittis odio tincidunt congue. Aliquam laoreet neque sit amet tortor pretium ut volutpat nunc iaculis.  Sed vitae quam vel quam</p>
+			<ul class="about_sp">
+				<li>Nam vitae volutpat libero. Sed laoreet, sem facilisis vulputate posuere, eros nibh</li>
+				<li>Fusce in risus at libero laoreet dapibus.</li>
+				<li>Suspendisse scelerisque, eros a egestas ultrices, orci</li>
+			</ul>
+		</div>
+		<div class="grid_5 omega">
+			<iframe width="100%" height="335" src="http://www.youtube.com/embed/uySKQR1alRw" frameborder="0" allowfullscreen></iframe>
+		</div>
+		
+	</div>
+</div>
+
+
+<div class="slide" id="slide3" data-slide="3" data-stellar-background-ratio="0.5">
+	<div class="effect_2 padding_slide3">
+		<div class="container clearfix">
+		
+			<div id="content" class="grid_12">
+				<p>Integer ut lacus nec mauris</p>
+			</div>
+		
+		</div>
+	</div>
+</div>
+
+
+<div class="slide" id="slide4" data-slide="4" data-stellar-background-ratio="0.5">
+	<div class="container clearfix">
+		
+		<div id="content" class="grid_12">
+			<h1><span>Work</span></h1>
+		</div>
+		<div class="clear"></div>
+		
+		<div id="contenet">
+			<div class="gallery-list">
+				<!-- portfolio_block -->
+				<div>                                  
+					<div class="grid_3">
+						<div class="hover_img">
+							<img src="images/portfolio/1.jpg" alt="" />
+							<span class="portfolio_zoom"><a href="images/portfolio/full/1.jpg" rel="prettyPhoto[portfolio1]"></a></span>
+							<span class="portfolio_link"><a href="javascript:void(0);">View item</a></span>
+						</div>
+						<div class="item_description">
+							Ut luctus magna non
+						</div>
+					</div>
+					<div class="grid_3">
+						<div class="hover_img">
+							<img src="images/portfolio/2.jpg" alt="" />
+							<span class="portfolio_zoom"><a href="images/portfolio/full/2.jpg" rel="prettyPhoto[portfolio1]"></a></span>
+							<span class="portfolio_link"><a href="javascript:void(0);">View item</a></span>
+						</div>
+						<div class="item_description">
+							Nullam ac urna id
+						</div>
+					</div>
+					<div class="grid_3">
+						<div class="hover_img">
+							<img src="images/portfolio/3.jpg" alt="" />
+							<span class="portfolio_zoom"><a href="images/portfolio/full/3.jpg" rel="prettyPhoto[portfolio1]"></a></span>
+							<span class="portfolio_link"><a href="javascript:void(0);">View item</a></span>
+						</div>
+						<div class="item_description">
+							viverra a egestas nisl
+						</div>
+					</div>
+					<div class="grid_3">
+						<div class="hover_img">
+							<img src="images/portfolio/4.jpg" alt="" />
+							<span class="portfolio_zoom"><a href="images/portfolio/full/4.jpg" rel="prettyPhoto[portfolio1]"></a></span>
+							<span class="portfolio_link"><a href="javascript:void(0);">View item</a></span>
+						</div>
+						<div class="item_description">
+							Sed fringilla nisl ac
+						</div>
+					</div>
+					<div class="grid_3">
+						<div class="hover_img">
+							<img src="images/portfolio/5.jpg" alt="" />
+							<span class="portfolio_zoom"><a href="images/portfolio/full/5.jpg" rel="prettyPhoto[portfolio1]"></a></span>
+							<span class="portfolio_link"><a href="javascript:void(0);">View item</a></span>
+						</div>
+						<div class="item_description">
+							est tempus convallis
+						</div>
+					</div>
+					<div class="grid_3">
+						<div class="hover_img">
+							<img src="images/portfolio/6.jpg" alt="" />
+							<span class="portfolio_zoom"><a href="images/portfolio/full/6.jpg" rel="prettyPhoto[portfolio1]"></a></span>
+							<span class="portfolio_link"><a href="javascript:void(0);">View item</a></span>
+						</div>
+						<div class="item_description">
+							Proin eget justo nisl
+						</div>
+					</div>
+					<div class="grid_3">
+						<div class="hover_img">
+							<img src="images/portfolio/7.jpg" alt="" />
+							<span class="portfolio_zoom"><a href="images/portfolio/full/7.jpg" rel="prettyPhoto[portfolio1]"></a></span>
+							<span class="portfolio_link"><a href="javascript:void(0);">View item</a></span>
+						</div>
+						<div class="item_description">
+							a pellentesque sem
+						</div>
+					</div>
+					<div class="grid_3">
+						<div class="hover_img">
+							<img src="images/portfolio/8.jpg" alt="" />
+							<span class="portfolio_zoom"><a href="images/portfolio/full/8.jpg" rel="prettyPhoto[portfolio1]"></a></span>
+							<span class="portfolio_link"><a href="javascript:void(0);">View item</a></span>
+						</div>
+						<div class="item_description">
+							Nulla mollis
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>   
+				<!-- //portfolio_block -->   
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+
+
+
+<div class="slide" id="slide5" data-slide="5" data-stellar-background-ratio="0.5">
+	<div class="effect_2 padding_slide5">
+		<div class="container clearfix">
+		
+			<div id="content" class="grid_12">
+				<p>Nullam vel tellus id diam</p>
+			</div>
+		
+		</div>
+	</div>
+</div>
+
+
+
+
+<div class="slide" id="slide6" data-slide="6" data-stellar-background-ratio="0.5">
+	<div class="container clearfix">
+
+		<div id="content" class="grid_12">
+			<h1><span>Services</span></h1>
+		</div>
+		<div class="clear"></div>
+		
+		<div id="content">
+			<div class="grid_4 serv_block">
+				<div class="icon_block1"></div>
+				<p>Globalization</p>
+				<span>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus tempor ipsum vel</span>
+				<div class="serv_link1">Read More</div>
+				<a class="serv_link2" href="javascript:void(0);">Read More</a>
+			</div>
+			<div class="grid_4 serv_block">
+				<div class="icon_block2"></div>
+				<p>Globalization</p>
+				<span>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus tempor ipsum vel</span>
+				<div class="serv_link1">Read More</div>
+				<a class="serv_link2" href="javascript:void(0);">Read More</a>
+			</div>
+			<div class="grid_4 serv_block omega">
+				<div class="icon_block3"></div>
+				<p>Globalization</p>
+				<span>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus tempor ipsum vel</span>
+				<div class="serv_link1">Read More</div>
+				<a class="serv_link2" href="javascript:void(0);">Read More</a>
+			</div>
+		</div>
+	
+	</div>
+</div>
+
+
+
+<div class="slide" id="slide7" data-slide="7" data-stellar-background-ratio="0.5">
+	<div class="effect_2 padding_slide7">
+		<div class="container clearfix">
+		
+			<div id="content" class="grid_12">
+				<p>interdum mauris non metus</p>
+			</div>
+		
+		</div>
+	</div>
+</div>
+
+
+
+<div class="slide" id="slide8" data-slide="8" data-stellar-background-ratio="0.5">
+	<div class="container clearfix">
+		
+		<div id="content" class="grid_12">
+			<h1><span>Contact</span></h1>
+		</div>
+		<div class="clear"></div>
+		
+		<div class="grid_4">
+			<h4>Contact Form</h4>
+			<div class="contact_form">  
+				<div id="note"></div>
+				<div id="fields">
+					<form id="ajax-contact-form" action="">
+						<input type="text" name="name" value="" placeholder="Name" />
+						<!-- <input type="text" name="subject" value="" placeholder="Phone" /> -->
+						<input type="text" name="email" value="" placeholder="Email" />
+						<textarea name="message" id="message" placeholder="Message"></textarea>
+						<div class="clear"></div>
+						<input type="reset" class="contact_btn" value="Clear Form" />
+						<input type="submit" class="contact_btn send_btn" value="Send" />
+						<div class="clear"></div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="grid_4 contact_det_block">
+			<h4>Contact Details</h4>
+			<ul class="foot_block_intouch">
+				<li class="touch_phone"><p>(+1) 245 5462 252</p></li>
+				<li class="touch_clock"><p>Mon - Sat 9:00am - 6:00 pm</p></li>
+				<li class="touch_mail"><a href="mailto:support@lorem.com">support@lorem.com</a></li>
+				<li class="touch_site"><a href="javascript:void(0);">www.lorem.com</a></li>
+				<li class="touch_adress"><p>3301 Lorem, Dolor Sit Amet St</p></li>
+				<li class="facebook"><a href="javascript:void(0);">http://facebook.com/companyname</a></li>
+				<li class="twitter"><a href="javascript:void(0);">http://twitter.com/companyname</a></li>
+			</ul>
+		</div>
+		<div class="grid_4 omega">
+			<h4>Information</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec posuere viverra sapien, vel elementum arcu ultrices a.</p>
+			<p>Pellentesque suscipit quam eu ante volutpat ut rutrum sapien bibendum. Praesent pellentesque convallis egestas. Ut egestas gravida lacus, sit amet viverra leo hendrerit at. Donec leo sem, semper a interdum quis, varius id ante. Phasellus et ante ac elit adipiscing lobortis in</p>
+		</div>
+		<div class="clear"></div>
+
+	</div>
+	
+	<div id="map_block"><iframe width="100%" height="722" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=los+angeles&amp;aq=&amp;sll=37.0625,-95.677068&amp;sspn=53.080379,114.169922&amp;ie=UTF8&amp;hq=&amp;hnear=Los+Angeles,+California&amp;ll=34.052234,-118.243685&amp;spn=0.003427,0.006968&amp;t=m&amp;z=14&amp;output=embed"></iframe></div>
+	
+</div>
+
+
+
+
+<div id="footer">
+	<div class="container clearfix">
+		<div class="copyright">Unicity &copy; 2020 | <a href="javascript:void(0);">Privacy Policy</a> | <a href="http://marketolog.me/shablony/shablony_landing_page/">Скачать шаблоны Landing Page на сайте Marketolog.me</a></div>
+		<div id="back_top"><a class="button" title="" data-slide="1">back to top</a></div>
+	</div>
+</div>
+
+
+</body>
+</html>

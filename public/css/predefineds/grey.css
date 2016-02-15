@@ -1,0 +1,26 @@
+input[type="submit"], footer #copyright, .content.color, section .container.none_bottom .content.color:after, section .button, .slider .button, section .features li a:hover i, section #screens li a div:before, #toTop a, header .header.fixed #menu_cover, header .header.fixed #menu_cover:before, header .header.fixed #menu_cover:after, section aside .module .content .tags a, header .header.layered .tint {
+	background-color: #7F8C8D;
+}
+
+textarea, input, section .download li a i:before, section .features li a i:before, section .features li a:hover span, section #filters li a, #team_members .team_member .title .name, #contact p a, #toTop div, header .header nav#menu ul li a.current, section aside .module .content .posts li a:hover span, section #blog .breadcrumb ul li a {
+	color: #7F8C8D;
+}
+
+section .features li a:hover i {
+	border: 3px solid #7F8C8D;
+}
+
+textarea:hover, input:hover, section #team_members .team_member:hover .photo {
+	border: 1px solid #7F8C8D;
+}
+
+textarea:focus, input:focus {
+	border: 1px solid #7F8C8D;
+	-webkit-box-shadow: inset 0px 0px 0px 3px #7F8C8D;
+	-moz-box-shadow: inset 0px 0px 0px 3px #7F8C8D;
+	box-shadow: inset 0px 0px 0px 3px #7F8C8D;
+}
+
+section aside .module .content .tags a:before {
+	border-color: transparent #7F8C8D transparent transparent;
+}

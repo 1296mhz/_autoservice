@@ -1,0 +1,380 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale = 1.0, user-scalable = no">
+	<title>Шаблон Landing Page универсальный | скачать шаблоны лендинг пэйдж на сайте Marketolog.me</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+	<link href="css/prettyPhoto.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="css/normalize.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="css/grid.css" type="text/css" media="screen">
+	
+	<link href='http://fonts.googleapis.com/css?family=Anton' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Raleway:400,700,300' rel='stylesheet' type='text/css'>
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
+	<script src="js/jquery.sticky.js"></script>
+	<script type="text/javascript" src="js/js.js"></script>
+	<script type="text/javascript" src="js/jquery.stellar.min.js"></script>
+	<script type="text/javascript" src="js/waypoints.min.js"></script>
+	
+	<!--[if lt IE 9]>
+		<script src="js/html5shiv.js"></script>
+		<script src="js/respond.src.js"></script>
+		<style type="text/css">
+			.circle_img {display:none; }
+			#slide1 span {font-size:26px;}
+		</style>
+	<![endif]-->
+	
+	<script type="text/javascript">
+		$(document).ready(function(){	
+			$("#ajax-contact-form").submit(function() {
+				var str = $(this).serialize();		
+				$.ajax({
+					type: "POST",
+					url: "contact_form/contact_process.php",
+					data: str,
+					success: function(msg) {
+						// Message Sent - Show the 'Thank You' message and hide the form
+						if(msg == 'OK') {
+							result = '<div class="notification_ok">Your message has been sent. Thank you!</div>';
+							$("#fields").hide();
+						} else {
+							result = msg;
+						}
+						$('#note').html(result);
+					}
+				});
+				return false;
+			});
+
+		});		
+	</script>
+	
+</head>
+
+<body>
+
+
+<div class="slide" id="slide1" data-slide="1" data-stellar-background-ratio="0.5">
+	<div class="container clearfix">
+
+		<div id="content" class="grid_12">
+			<div class="filtr_bg">
+				<h1>Elite Model Management</h1>
+				<div class="slogan">
+					<div class="left_bord"></div>
+					<div class="slogan_text">Duis accumsan imperdiet orci, at</div>
+					<div class="right_bord"></div>
+				</div>
+				<a class="button" title="" data-slide="2"></a>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+</div>
+
+
+<div class="menu">	
+	<div class="container clearfix">
+
+		<div id="logo" class="fleft">
+			<a href="index.html"><img src="images/logo.png" /></a>
+		</div>
+		
+		<div id="nav" class="fright">
+			<ul class="navigation">
+				<li data-slide="1">Home</li>
+				<li data-slide="2">About</li>
+				<li data-slide="4">Services</li>
+				<li data-slide="6">Model List</li>
+				<li data-slide="8">Contact</li>
+				<div class="clear"></div>
+			</ul>
+		</div>
+	
+	</div>
+</div>
+
+
+<div class="slide" id="slide2" data-slide="2" data-stellar-background-ratio="0.5">
+	<div class="container clearfix">
+		
+		<div id="content" class="grid_12">
+			<h1>About</h1>
+			<div class="h1_viva">Vivamus iaculis ultricies mauris id posuere. Praesent mollis tincidunt diam, in sagittis</div>
+		</div>
+		
+		<div id="content">
+			<div class="grid_4">
+				<p>Morbi rutrum, elit ac fermentum egestas, tortor ante vestibulum est, eget scelerisque nisl velit eget tellus. Fusce porta facilisis luctus. Integer neque dolor, rhoncus nec euismod eget, pharetra et tortor. Nulla id pulvinar nunc. Vestibulum auctor</p>
+			</div>
+			<div class="grid_4">
+				<p>Vivamus nunc eros, auctor vitae condimentum id, gravida at orci. Sed ac massa mauris, a cursus nulla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque dignissim, felis vulputate interdum fringilla, ipsum</p>
+			</div>
+			<div class="grid_4 omega">
+				<p>Quisque aliquam quam in ipsum volutpat vehicula. Morbi non nisi condimentum metus convallis tempus non vel risus. In ut ligula ut urna auctor faucibus. Donec volutpat, eros eu congue lacinia, dui sapien rhoncus ante, ut egestas ipsum purus in</p>
+			</div>
+			<div class="clear"></div>
+		</div>
+		
+	</div>
+</div>
+
+
+
+
+<div class="slide" id="slide3" data-slide="3" data-stellar-background-ratio="0.5">
+	<div class="padding_slide3">
+		
+		<div class="button_bg"><a class="button button3" title="" data-slide="1"></a></div>
+		
+	</div>
+</div>
+
+
+
+
+<div class="slide" id="slide4" data-slide="4" data-stellar-background-ratio="0.5">
+	<div class="container clearfix">
+		
+		<div id="content" class="grid_12">
+			<h1>Services</h1>
+			<div class="h1_viva">Vivamus iaculis ultricies mauris id posuere. Praesent mollis tincidunt diam, in</div>
+		</div>
+		
+		<div id="content">
+			<div class="grid_6">
+				<p>Nam sed orci ipsum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec tristique ullamcorper sapien vel aliquet. Vestibulum consectetur sapien ante. Ut sem nisl, iaculis at tristique a, rutrum interdum tortor. Donec ut sem a elit luctus vulputate.</p>
+				<p>Aenean et velit dolor, id varius erat. Phasellus metus nunc, ultricies faucibus tristique nec, feugiat sit amet lectus. Nunc dapibus arcu sit amet ipsum tincidunat feugiat. Donec molestie sagittises posuere. Duis facilisis urna sed magna mattis auctor. Fusce sed mi pretium sem faciliseus lacinia ut sit amet dolor.</p>
+				<p>Sed lobortis libero at elit malesuada aliquam. Aliquam faucibus, odio et tempus lacinia, dolor odio faucibus enim, sit amet facilisis lectues leo at sappiena. In fringilla risus eu eros imperdiet id consequat lorem vulputate. Sed eget velit ac ante auctor vestibulum. Nam eleifend sollicitudin odio, ac ultricesus libero accumsan nec. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at ligula in purus volutpat gravida in non mauris. Pellentesque ac maurises justo, sit amet tristique quam. Nulla sollicitudin, ipsum eget consequat tincidunt, felis justo tempor ligula, eu ornare quam ligula tempus lectus. Aliquam sagittis</p>
+			</div>
+			<div class="grid_6 omega">
+				<div class="servc_block">
+					<div class="icon_h">
+						<img class="icon_bg" src="images/icon_bg.png" alt="" />
+						<img class="servc_icon" src="images/icon1.png" alt="" />
+					</div>
+					<a href="javascript:void(0);" alt="">models</a>
+					Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus tempor ipsum
+					<div class="clear"></div>
+				</div>
+				<div class="servc_block">
+					<div class="icon_h">
+						<img class="icon_bg" src="images/icon_bg.png" alt="" />
+						<img class="servc_icon" src="images/icon2.png" alt="" />
+					</div>
+					<a href="javascript:void(0);" alt="">Portfolio Photography</a>
+					Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus tempor ipsum
+					<div class="clear"></div>
+				</div>
+				<div class="servc_block">
+					<div class="icon_h">
+						<img class="icon_bg" src="images/icon_bg.png" alt="" />
+						<img class="servc_icon" src="images/icon3.png" alt="" />
+					</div>
+					<a href="javascript:void(0);" alt="">event managment</a>
+					Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus tempor ipsum
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	
+	</div>
+</div>
+
+
+
+<div class="slide" id="slide5" data-slide="5" data-stellar-background-ratio="0.5">
+	<div class="padding_slide5">
+		
+		<div class="button_bg"><a class="button button3" title="" data-slide="1"></a></div>
+		
+	</div>
+</div>
+
+
+
+<div class="slide" id="slide6" data-slide="6" data-stellar-background-ratio="0.5">
+	<div class="container clearfix">
+		
+		<div id="content" class="grid_12">
+			<h1>model list</h1>
+			<div class="h1_viva">Vivamus iaculis ultricies mauris id posuere. Praesent mollis tincidunt diam, in sagittis odio</div>
+		</div>
+		<div class="clear"></div>
+		
+		<div id="contenet">
+			<div class="gallery-list">
+				<!-- portfolio_block -->
+				<div>
+					<div class="img_block">
+						<div class="hover_img">
+							<img class="portf_img" src="images/portfolio/1.jpg" alt="" />
+							<div class="item_description">
+								<p>nikki johnson</p>
+								Nam eleifend vulputate diam non accumsan. Fusce felis
+								<span class="portfolio_zoom"><a href="images/portfolio/full/1.jpg" rel="prettyPhoto[portfolio1]"></a></span>
+								<span class="portfolio_link"><a href="javascript:void(0);">View item</a></span>
+							</div>
+						</div>
+					</div>
+					<div class="img_block">
+						<div class="hover_img">
+							<img class="portf_img" src="images/portfolio/2.jpg" alt="" />
+							<div class="item_description">
+								<p>nikki johnson</p>
+								Nam eleifend vulputate diam non accumsan. Fusce felis
+								<span class="portfolio_zoom"><a href="images/portfolio/full/2.jpg" rel="prettyPhoto[portfolio1]"></a></span>
+								<span class="portfolio_link"><a href="javascript:void(0);">View item</a></span>
+							</div>
+						</div>
+					</div>
+					<div class="img_block">
+						<div class="hover_img">
+							<img class="portf_img" src="images/portfolio/3.jpg" alt="" />
+							<div class="item_description">
+								<p>nikki johnson</p>
+								Nam eleifend vulputate diam non accumsan. Fusce felis
+								<span class="portfolio_zoom"><a href="images/portfolio/full/3.jpg" rel="prettyPhoto[portfolio1]"></a></span>
+								<span class="portfolio_link"><a href="javascript:void(0);">View item</a></span>
+							</div>
+						</div>
+					</div>
+					<div class="img_block omega">
+						<div class="hover_img">
+							<img class="portf_img" src="images/portfolio/4.jpg" alt="" />
+							<div class="item_description">
+								<p>nikki johnson</p>
+								Nam eleifend vulputate diam non accumsan. Fusce felis
+								<span class="portfolio_zoom"><a href="images/portfolio/full/4.jpg" rel="prettyPhoto[portfolio1]"></a></span>
+								<span class="portfolio_link"><a href="javascript:void(0);">View item</a></span>
+							</div>
+						</div>
+					</div>
+					<div class="img_block">
+						<div class="hover_img">
+							<img class="portf_img" src="images/portfolio/5.jpg" alt="" />
+							<div class="item_description">
+								<p>nikki johnson</p>
+								Nam eleifend vulputate diam non accumsan. Fusce felis
+								<span class="portfolio_zoom"><a href="images/portfolio/full/5.jpg" rel="prettyPhoto[portfolio1]"></a></span>
+								<span class="portfolio_link"><a href="javascript:void(0);">View item</a></span>
+							</div>
+						</div>
+					</div>
+					<div class="img_block">
+						<div class="hover_img">
+							<img class="portf_img" src="images/portfolio/6.jpg" alt="" />
+							<div class="item_description">
+								<p>nikki johnson</p>
+								Nam eleifend vulputate diam non accumsan. Fusce felis
+								<span class="portfolio_zoom"><a href="images/portfolio/full/6.jpg" rel="prettyPhoto[portfolio1]"></a></span>
+								<span class="portfolio_link"><a href="javascript:void(0);">View item</a></span>
+							</div>
+						</div>
+					</div>
+					<div class="img_block">
+						<div class="hover_img">
+							<img class="portf_img" src="images/portfolio/7.jpg" alt="" />
+							<div class="item_description">
+								<p>nikki johnson</p>
+								Nam eleifend vulputate diam non accumsan. Fusce felis
+								<span class="portfolio_zoom"><a href="images/portfolio/full/7.jpg" rel="prettyPhoto[portfolio1]"></a></span>
+								<span class="portfolio_link"><a href="javascript:void(0);">View item</a></span>
+							</div>
+						</div>
+					</div>
+					<div class="img_block omega">
+						<div class="hover_img">
+							<img class="portf_img" src="images/portfolio/8.jpg" alt="" />
+							<div class="item_description">
+								<p>nikki johnson</p>
+								Nam eleifend vulputate diam non accumsan. Fusce felis
+								<span class="portfolio_zoom"><a href="images/portfolio/full/8.jpg" rel="prettyPhoto[portfolio1]"></a></span>
+								<span class="portfolio_link"><a href="javascript:void(0);">View item</a></span>
+							</div>
+						</div>
+					</div>
+					
+					<div class="clear"></div>
+				</div>   
+				<!-- //portfolio_block -->   
+			</div>
+		</div>
+	
+	</div>
+</div>
+
+
+
+<div class="slide" id="slide7" data-slide="7" data-stellar-background-ratio="0.5">
+	<div class="padding_slide7">
+		
+		<div class="button_bg"><a class="button button3" title="" data-slide="1"></a></div>
+		
+	</div>
+</div>
+
+
+
+<div class="slide" id="slide8" data-slide="8" data-stellar-background-ratio="0.5">
+	<div class="container clearfix">
+		
+		<div id="content" class="grid_12">
+			<h1>Contact</h1>
+			<div class="h1_viva">Vivamus iaculis ultricies mauris id posuere. Praesent mollis tincidunt diam, in sagittis odio</div>
+		</div>
+		<div class="clear"></div>
+		
+		<div class="grid_12">
+			<p>Nullam aliquam, mauris sit amet convallis condimentum, massa tortor pretium magna, vitae rutrum libero nibh vitae nisl. Sed imperdiet dictum sapien. Mauris tortor massa, euismod eu rhoncus dignissim, ultrices at leo. Donec gravida, lorem ac sollicitudin venenatis, ante risus convallis massa, non porta eros diam sit amet elit. Ut blandit ornare ante hendrerit malesuada. Duis eget odio at erat condimentum tempus. Duis fermentum odio nec arcu elementum sit amet</p>
+			<div class="contact_form">  
+				<div id="note"></div>
+				<div id="fields">
+					<form id="ajax-contact-form" action="">
+						<div class="grid_6">
+							<input type="text" name="name" value="" placeholder="Name" />
+							<input type="text" name="subject" value="" placeholder="Phone" />
+							<input type="text" name="email" value="" placeholder="Email" />
+						</div>
+						<div class="grid_6 omega"><textarea name="message" id="message" placeholder="Message"></textarea></div>
+						<div class="clear"></div>
+						<input type="reset" class="contact_btn" value="Clear Form" />
+						<input type="submit" class="contact_btn send_btn" value="Send" />
+						<div class="clear"></div>
+					</form>
+				</div>
+			</div>
+		</div>		
+		<div class="clear"></div>
+
+	</div>
+	
+	<div id="map_block"><iframe width="100%" height="722" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=los+angeles&amp;aq=&amp;sll=37.0625,-95.677068&amp;sspn=53.080379,114.169922&amp;ie=UTF8&amp;hq=&amp;hnear=Los+Angeles,+California&amp;ll=34.052234,-118.243685&amp;spn=0.003427,0.006968&amp;t=m&amp;z=14&amp;output=embed"></iframe></div>
+	
+</div>
+
+
+
+
+<div id="footer">
+	<div class="container clearfix">
+		<div class="copyright">coral &copy; 2020 | <a href="javascript:void(0);">Privacy Policy</a> | <a href="http://marketolog.me/shablony/shablony_landing_page/">Скачать шаблоны Landing Page на сайте Marketolog.me</a></div>
+		<div id="back_top"><a class="button" title="" data-slide="1">top</a></div>
+	</div>
+</div>
+
+
+</body>
+</html>
+
+
+
+
+
+
