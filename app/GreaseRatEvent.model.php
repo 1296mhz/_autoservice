@@ -28,6 +28,7 @@ CREATE TABLE `grease_rat_work` (
 
 -- 2016-02-15 17:06:28
 */
+
 class GreaseRatEvent extends SimpleOrm
 {
     protected static

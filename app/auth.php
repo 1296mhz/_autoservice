@@ -1,5 +1,7 @@
 <?php
+include_once '__logs.php';
 include_once '__mysql.php';
+include_once 'User.model.php';
 
 session_start();
 
@@ -7,7 +9,7 @@ function getUser()
 {
     if( isset($_SESSION['authUser']) )
     {
-        return $_SESSION['authUser'];
+        return User::retrieveByPK( $_SESSION['authUser'] );
     }
 
     return null;
@@ -27,7 +29,9 @@ function authUser( $user )
 
 function exitUser()
 {
-   if( isset($_SESSION['authUser']) )
+   toLog($_SERVER['PHP_AUTH_PW']);
+
+   if( isset($_SERVER['PHP_AUTH_USER']) )
    {
         unset($_SESSION['authUser']);
         return true;
@@ -44,14 +48,38 @@ function setAuthHeaders()
     exit;
 }
 
+function redirect( $location )
+{
+    header('Location: ' . $location);
+    exit;
+}
+
 function checkAuth()
 {
-    if( getUser() == null )
-    {
-        setAuthHeaders();
-    }
-    else
-    {
+    $user = getUser();
 
+    if( $user == null )
+    {
+        if( !isset($_SERVER['PHP_AUTH_USER']) )
+        {
+            setAuthHeaders();
+        }
+        else
+        {
+            $name     = $_SERVER['PHP_AUTH_USER'];
+            $password = md5($_SERVER['PHP_AUTH_PW']);
+
+            $user = User::sql("SELECT * FROM :table WHERE name = '$name' AND password = '$password'", SimpleOrm::FETCH_ONE);
+
+            if( $user )
+            {
+                unset($_SERVER['PHP_AUTH_PW']);
+                authUser( $user->id );
+            }
+            else
+            {
+                setAuthHeaders();
+            }
+        }
     }
 }
