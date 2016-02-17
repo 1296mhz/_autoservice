@@ -3,6 +3,8 @@ include( dirname(__FILE__) . "/../../app/__init.php" );
 include( dirname(__FILE__) . "/../../app/GreaseRatEvent.model.php" );
 include( dirname(__FILE__) . "/../../app/auth.php" );
 
+checkAuth();
+
 $utc_fix = "-2 hours";
 
 $startdatetime = date("Y-m-d H:i:s");
@@ -26,14 +28,6 @@ function createBetween($name, $start, $end)
     return " " . $name . " BETWEEN '" . $start . "' AND '" . $end . "'";
 }
 
-/*
-$sql = $sql_prefix .
-       createBetween("startdatetime", $startdatetime, $startdatetime) .
-       " AND " .
-       createBetween("enddatetime", $enddatetime, $enddatetime);
-
-toDebug( $sql );
-*/
 
 $sql = $sql_prefix . " DATE(startdatetime) >= '" . $startdatetime . "' AND DATE(enddatetime) <= '" . $enddatetime . "'";
 
@@ -50,7 +44,6 @@ foreach( $greaseRatEvents as $event )
     array_push($eventsData, array(
          'id' => $event->id,
          'title' => decorateEventName( $event ),
-         'url' => 'www',
          'class' => 'event-important',
          'start' => strtotime($utc_fix, strtotime($event->startdatetime) ) . '000',
          'end' => strtotime($utc_fix, strtotime($event->enddatetime) ) . '000',

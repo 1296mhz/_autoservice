@@ -1,7 +1,9 @@
 <?php
 include( dirname(__FILE__) . "/../../app/__init.php" );
 include( dirname(__FILE__) . "/../../app/GreaseRatEvent.model.php" );
-include( dirname(__FILE__) . "/../app/auth.php" );
+include( dirname(__FILE__) . "/../../app/auth.php" );
+
+checkAuth();
 
 function validateExists( $dst, $name )
 {
@@ -123,8 +125,9 @@ function validatePostData( $post )
     $newEvent->mileage       = intval($filteredPost["mileage"]);
     $newEvent->gosNumber     = $filteredPost["gosNumber"];
     $newEvent->vin           = $filteredPost["vin"];
+    $newEvent->state         = 0;
     $newEvent->startdatetime = $filteredPost["startdatetime"];
-    $newEvent->enddatetime    = $filteredPost["enddatetime"];
+    $newEvent->enddatetime   = $filteredPost["enddatetime"];
     $newEvent->save();
 
     sendJsonString(json_encode($newEvent));

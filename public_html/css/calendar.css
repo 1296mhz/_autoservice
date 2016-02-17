@@ -513,3 +513,7 @@ a.cal-event-week {
 .badge-important {
   background-color: #b94a48;
 }
+
+.navbar-right {
+  margin-right: 15px;
+}
