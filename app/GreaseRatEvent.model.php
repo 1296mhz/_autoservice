@@ -16,6 +16,7 @@ CREATE TABLE `grease_rat_work` (
   `typeOfRepair` int(11) NOT NULL,
   `avtoModel` tinyint(4) NOT NULL,
   `mileage` int(11) NOT NULL,
+  `gosNumber` text COLLATE utf8_unicode_ci NOT NULL,
   `vin` text COLLATE utf8_unicode_ci NOT NULL,
   `startdatetime` datetime NOT NULL,
   `enddatetime` datetime NOT NULL,

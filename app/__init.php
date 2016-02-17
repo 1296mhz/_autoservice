@@ -1,12 +1,32 @@
 <?php
-header('Content-Type: application/json');
+include_once 'Logger.php';
+include_once '__mysql.php';
 
-include 'SimpleOrm.class.php';
+$log = logger::getInstance();
+$log->logfile = dirname(__FILE__) . '/../logs/app.log';
 
-$conn = new mysqli('127.0.0.1', 'grease_rat', 'grease_rat');
+function appError( $message )
+{
+    global $log;
+    $log->write( $message, __FILE__, __LINE__ );
+    die();
+}
 
-if ($conn->connect_error)
-  die(sprintf('Unable to connect to the database. %s', $conn->connect_error));
+function toLog( $message )
+{
+    global $log;
+    $log->write( $message, __FILE__, __LINE__ );
+}
 
+function toDebug( $message )
+{
+    global $log;
+    $log->write( $message, __FILE__, __LINE__ );
+}
 
-SimpleOrm::useConnection($conn, 'grease_rat');
+function sendJsonString( $json )
+{
+    header('Content-Type: application/json');
+    echo $json;
+    exit();
+}
