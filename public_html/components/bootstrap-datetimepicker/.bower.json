@@ -1,0 +1,10 @@
+{
+  "name": "bootstrap-datetimepicker",
+  "_cacheHeaders": {
+    "Content-Type": "text/html; charset=utf-8"
+  },
+  "main": "index",
+  "_source": "https://github.com/Eonasdan/bootstrap-datetimepicker",
+  "_target": "*",
+  "_originalSource": "https://github.com/Eonasdan/bootstrap-datetimepicker"
+}
