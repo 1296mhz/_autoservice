@@ -517,3 +517,7 @@ a.cal-event-week {
 .navbar-right {
   margin-right: 15px;
 }
+
+.cal-context {
+  background: #fff;
+}
