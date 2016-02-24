@@ -15,9 +15,11 @@ CREATE TABLE `grease_rat_work` (
   `customer` text COLLATE utf8_unicode_ci NOT NULL,
   `typeOfRepair` int(11) NOT NULL,
   `avtoModel` tinyint(4) NOT NULL,
+  `state` tinyint(4) NOT NULL,
   `mileage` int(11) NOT NULL,
   `gosNumber` text COLLATE utf8_unicode_ci NOT NULL,
   `vin` text COLLATE utf8_unicode_ci NOT NULL,
+  `status` tinyint(11) NOT NULL,
   `startdatetime` datetime NOT NULL,
   `enddatetime` datetime NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -28,6 +30,7 @@ CREATE TABLE `grease_rat_work` (
 
 -- 2016-02-15 17:06:28
 */
+
 class GreaseRatEvent extends SimpleOrm
 {
     protected static

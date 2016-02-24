@@ -32,6 +32,9 @@ function CalendarController()
 		view: 'month',
 		tmpl_path: 'tmpls/',
 		tmpl_cache: false,
+		modal : '#event-edit',
+		modal_title : "Редактирование события",
+		modal_type : "template",
 		classes:
 		{
 			months:
@@ -40,6 +43,8 @@ function CalendarController()
 			}
 		}
 	};
+
+
 
 	/**
 	 * Обработчик события :
@@ -75,6 +80,91 @@ function CalendarController()
 		$('button[data-calendar-view="' + view + '"]').addClass('active');
 	};
 
+	this.handleExitButtonClick = function(e)
+	{
+		e.preventDefault();
+		window.location.href = '/api/logout.php';
+	};
+
+	this.handleCalendarAfterModalShown = function( event )
+	{
+		var $modal = this.$modal,
+			$startWorkInput = $modal.find('#startdatetime'),
+			$endWorkInput = $modal.find('#enddatetime'),
+			$removeBtn = $modal.find('.btn-remove'),
+			$changeBtn = $modal.find('.btn-change'),
+			_id = $modal.data('handled.event-id');
+
+		// настройка плагина с выбором дат
+		if( $startWorkInput.data('datetimepicker') == undefined )
+		{
+			$startWorkInput.datetimepicker({
+				locale: 'ru',
+				format: 'YYYY-MM-DD HH:mm'
+			});
+		}
+
+		// настройка плагина с выбором дат
+		if( $endWorkInput.data('datetimepicker') == undefined )
+		{
+			$endWorkInput.datetimepicker({
+				locale: 'ru',
+				format: 'YYYY-MM-DD HH:mm'
+			});
+		}
+
+		$removeBtn.off('click').on('click', function(e)
+		{
+			e.preventDefault();
+
+			const SERVER_URL = 'api/event_actions.php';
+
+			$.ajax({
+				type : "POST",
+				url : SERVER_URL,
+				data : {
+					"action" : "DELETE",
+					"id" : _id
+				},
+				success : function(data)
+				{
+					if( data == "OK" )
+					{
+						this.view();
+						$modal.modal('hide');
+					}
+				}.bind(this)
+			});
+
+		}.bind(this));
+
+		$changeBtn.off('click').on('click', function(e)
+		{
+			e.preventDefault();
+
+			const SERVER_URL = 'api/event_actions.php';
+
+			$.ajax({
+				type : "POST",
+				url : SERVER_URL,
+				data : {
+					"action" : "MOVE",
+					"id" : _id,
+					"startdatetime" : $startWorkInput.val(),
+					"enddatetime" : $endWorkInput.val()
+				},
+				success : function(data)
+				{
+					if( data == "OK" )
+					{
+						this.view();
+						$modal.modal('hide');
+					}
+				}.bind(this)
+			});
+		}.bind(this));
+	};
+
 	/**
 	 * Обработчик события : показ формы
 	 * @param e
@@ -90,7 +180,8 @@ function CalendarController()
 			$endWorkInput = $form.find('#enddatetime'),
 			$repairPostSelect = $form.find('#repairPost'),
 			$typeOfRepairSelect = $form.find('#typeOfRepair'),
-			$avtoModelSelect = $form.find('#avtoModel');
+			$avtoModelSelect = $form.find('#avtoModel'),
+			$statusSelect = $form.find('#status');
 
 		// очищаем все пометки об ошибках
 		$form.find('.form-group').each(function()
@@ -136,6 +227,7 @@ function CalendarController()
 		_fillSelect($repairPostSelect, this.staticData['repairPost']);
 		_fillSelect($typeOfRepairSelect, this.staticData['typeOfRepair']);
 		_fillSelect($avtoModelSelect, this.staticData['avtoModel']);
+		_fillSelect($statusSelect, this.staticData['status']);
 
 		/**
 		 * Обработчит ответа от сервера
@@ -198,7 +290,6 @@ function CalendarController()
 		});
 	};
 
-
 	this.init = function()
 	{
 		this.currentDate = new Date();
@@ -211,12 +302,12 @@ function CalendarController()
 		{
 			day: year+ "-" +month+ "-" +day,
 			onAfterEventsLoad: this.handleCalendarAfterEventsLoad,
-			onAfterViewLoad: this.handleCalendarAfterViewLoad
+			onAfterViewLoad: this.handleCalendarAfterViewLoad,
+			onAfterModalShown: this.handleCalendarAfterModalShown
 		};
 
 		this.options = $.extend(this.options, _options);
 		this.calendar = $('#calendar').calendar(this.options);
-
 
 		$('.btn-group button[data-calendar-nav]').off('click').on('click',function(e)
 		{
@@ -230,7 +321,6 @@ function CalendarController()
 			var $btn = $(e.target);
 			this.calendar.view($btn.data('calendar-view'));
 		}.bind(this));
-
 
 		$('#first_day').change(function()
 		{
@@ -267,8 +357,8 @@ function CalendarController()
 			this.calendar.view();
 		}.bind(this));
 
-
 		$('#createEvent').off('show.bs.modal').on('show.bs.modal', this.handleShowEventForm.bind(this));
+		$('.btn-exit').off('click').on('click', this.handleExitButtonClick.bind(this));
 	};
 
 	this.loadStatic = function( callback )

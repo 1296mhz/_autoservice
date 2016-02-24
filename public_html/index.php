@@ -1,3 +1,10 @@
+<?php
+include( dirname(__FILE__) . "/../app/__init.php" );
+include( dirname(__FILE__) . "/../app/auth.php" );
+
+$user = checkAuth();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,14 +34,16 @@
 </head>
 <body>
 <div class="container">
-    <nav class="navbar navbar-inverse">
+    <div class="navbar navbar-inverse">
         <div class="navbar-header">
             <a class="navbar-brand" href="#">Автосервис</a>
         </div>
         <button class="btn btn-success navbar-btn" data-toggle="modal" data-target="#createEvent">Создать</button>
         <button class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#listEvents">Список событий</button>
         <button class="btn btn-warning navbar-btn" data-toggle="modal" data-target="#report">Отчет</button>
-    </nav>
+        <button class="btn btn-danger navbar-btn btn-exit">Exit</button>
+        <p class="navbar-text navbar-right">Привет: <a href="#" class="navbar-link"><?php echo $user->name; ?></a></p>
+    </div>
 </div>
 
 <div class="container">
@@ -63,24 +72,28 @@
             <div id="calendar"></div>
         </div>
     </div>
-
 </div>
 
-<div class="modal hide fade" id="events-modal">
-    <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h3>Event</h3>
-    </div>
-    <div class="modal-body" style="height: 400px">
-    </div>
-    <div class="modal-footer">
-        <a href="#" data-dismiss="modal" class="btn">Close</a>
+
+<div class="modal fade" id="event-edit">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3>Редактирование события</h3>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+                <a href="#" class="btn btn-danger btn-remove">Удалить</a>
+                <a href="#" class="btn btn-warning btn-change">Изменить</a>
+                <a href="#" data-dismiss="modal" class="btn btn-primary">Закрыть</a>
+            </div>
+        </div>
     </div>
 </div>
 
 <!-- Modal Create-->
-<div class="modal fade" id="createEvent" tabindex="-1" role="dialog" aria-labelledby="createEventLabel"
-     aria-hidden="true">
+<div class="modal fade" id="createEvent">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -150,6 +163,7 @@
                             <input type="text" class="form-control" id="vin" name="vin" placeholder="">
                         </div>
                     </div>
+
 
                     <!-- Статус-->
                     <div class="form-group">

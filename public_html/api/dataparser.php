@@ -1,6 +1,9 @@
 <?php
 include( dirname(__FILE__) . "/../../app/__init.php" );
 include( dirname(__FILE__) . "/../../app/GreaseRatEvent.model.php" );
+include( dirname(__FILE__) . "/../../app/auth.php" );
+
+checkAuth();
 
 function validateExists( $dst, $name )
 {
@@ -48,11 +51,10 @@ function validateValue( $validateConfig, $validateFn, $post)
 
 function showErrors( $name, $data )
 {
-    echo json_encode((Object)[
+    sendJsonString(json_encode((Object)[
         "err" => $name,
         "data" => $data
-    ]);
-    die();
+    ]));
 }
 
 function validatePostData( $post )
@@ -66,6 +68,7 @@ function validatePostData( $post )
         "mileage",
         "gosNumber",
         "vin",
+        "status",
         "startdatetime",
         "enddatetime"
     );
@@ -79,6 +82,7 @@ function validatePostData( $post )
             "gosNumber",
             "mileage",
             "gosNumber",
+            "status",
             "startdatetime",
             "enddatetime"
         ),
@@ -97,6 +101,7 @@ function validatePostData( $post )
             "repairPost",
             "typeOfRepair",
             "avtoModel",
+            "status",
             "mileage",
         )
     );
@@ -123,12 +128,13 @@ function validatePostData( $post )
     $newEvent->mileage       = intval($filteredPost["mileage"]);
     $newEvent->gosNumber     = $filteredPost["gosNumber"];
     $newEvent->vin           = $filteredPost["vin"];
+    $newEvent->status        = intval($filteredPost["status"]);
+    $newEvent->state         = 0;
     $newEvent->startdatetime = $filteredPost["startdatetime"];
-    $newEvent->enddatetime    = $filteredPost["enddatetime"];
+    $newEvent->enddatetime   = $filteredPost["enddatetime"];
     $newEvent->save();
 
-    echo json_encode($newEvent);
-    die();
+    sendJsonString(json_encode($newEvent));
 }
 
 if( $_POST )

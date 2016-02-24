@@ -7,23 +7,23 @@
     <meta name="author" content="">
     <meta charset="UTF-8">
 
-    <link rel="stylesheet" href="components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css"/>
-    <link rel="stylesheet" href="components/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="css/calendar.css">
-    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="../components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css"/>
+    <link rel="stylesheet" href="../components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../css/calendar.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
 
-    <script type="text/javascript" src="components/jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="components/moment/min/moment.min.js"></script>
-    <script type="text/javascript" src="components/moment/locale/ru.js"></script>
-    <script type="text/javascript" src="components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
-    <script type="text/javascript" src="components/underscore/underscore-min.js"></script>
-    <script type="text/javascript" src="components/jstimezonedetect/jstz.js"></script>
-    <script type="text/javascript" src="components/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="../components/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="../components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../components/moment/min/moment.min.js"></script>
+    <script type="text/javascript" src="../components/moment/locale/ru.js"></script>
+    <script type="text/javascript" src="../components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="../components/underscore/underscore-min.js"></script>
+    <script type="text/javascript" src="../components/jstimezonedetect/jstz.js"></script>
+    <script type="text/javascript" src="../components/jquery-validation/dist/jquery.validate.min.js"></script>
 
-    <script type="text/javascript" src="js/language/ru-RU.js"></script>
-    <script type="text/javascript" src="js/calendar.js"></script>
-    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="../js/language/ru-RU.js"></script>
+    <script type="text/javascript" src="../js/calendar.js"></script>
+    <script type="text/javascript" src="../js/app.js"></script>
 </head>
 <body>
 <div class="container">
@@ -99,6 +99,24 @@
                         </div>
                     </div>
 
+                    <!-- Мастер-ремонтник-->
+                    <div class="form-group">
+                        <label for="repairMaster" class="col-sm-4 control-label">Мастер</label>
+                        <div class="col-sm-8">
+                            <select class="form-control" id="repairMaster" name="repairMaster" required="required"></select>
+                        </div>
+                    </div>
+
+                    <!-- Вид ремонта-->
+                    <div class="form-group">
+                        <label for="typeOfRepair" class="col-sm-4 control-label">Вид ремонта</label>
+                        <div class=" col-sm-8">
+
+                            <select class="form-control" id="typeOfRepair" name="typeOfRepair" required="required"></select>
+                        </div>
+                    </div>
+
+
                     <!-- Заказчик-->
                     <div class="form-group">
                         <label for="customer" class="col-sm-4 control-label">Заказчик</label>
@@ -111,11 +129,15 @@
                         </div>
                     </div>
 
-                    <!-- Вид ремонта-->
+                    <!-- Заказчик номер телефона-->
                     <div class="form-group">
-                        <label for="typeOfRepair" class="col-sm-4 control-label">Вид ремонта</label>
+                        <label for="customerPhone" class="col-sm-4 control-label">Номер телефона</label>
                         <div class="col-sm-8">
-                            <select class="form-control" id="typeOfRepair" name="typeOfRepair" required="required"></select>
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+                                <input type="text" class="form-control" name="customerPhone" id="customerPhone" placeholder="Номер телефона" required="required">
+                            </div>
+                            <span class="glyphicon form-control-feedback"></span>
                         </div>
                     </div>
 
@@ -142,7 +164,13 @@
                             <input type="text" class="form-control" id="gosNumber" name="gosNumber" placeholder="">
                         </div>
                     </div>
-
+                    <!-- Гос номер иностранный-->
+                    <div class="form-group">
+                        <label for="gosNumberForeign" class="col-sm-4 control-label">Государственный номер иностранный</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="gosNumberForeign" name="gosNumberForeign" placeholder="">
+                        </div>
+                    </div>
                     <!-- VIN-->
                     <div class="form-group">
                         <label for="vin" class="col-sm-4 control-label">VIN</label>
@@ -163,10 +191,9 @@
                     <div class="form-group">
                         <label for="startdatetime" class="col-sm-4 control-label">Начало в:</label>
                         <div class='input-group date col-sm-8'>
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                             <input type='text' class="form-control" id="startdatetime" name="startdatetime" required="required" />
-                            <span class="input-group-addon">
-                              <span class="glyphicon glyphicon-calendar"></span>
-                            </span>
+
                         </div>
                     </div>
 
@@ -174,10 +201,9 @@
                     <div class="form-group">
                         <label for="enddatetime" class="col-sm-4 control-label">Окончание в:</label>
                         <div class='input-group date col-sm-8'>
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                             <input type='text' class="form-control" id="enddatetime" name="enddatetime" required="required"/>
-                            <span class="input-group-addon">
-                              <span class="glyphicon glyphicon-calendar"></span>
-                            </span>
+
                         </div>
                     </div>
                 </form>

@@ -1012,15 +1012,19 @@ if(!String.prototype.formatNum) {
 
 		$('a[data-event-id]', this.context).unbind('click');
 
-		if(!self.options.modal) {
+		if(!self.options.modal)
+		{
 			return;
 		}
 
 		var modal = $(self.options.modal);
 
-		if(!modal.length) {
+		if(!modal.length)
+		{
 			return;
 		}
+
+		this.$modal = modal;
 
 		var ifrm = null;
 		if(self.options.modal_type == "iframe") {
