@@ -916,17 +916,19 @@ if(!String.prototype.formatNum) {
 				if(source.length) {
 					loader = function() {
 						var events = [];
-                                                var d = new Date();
-                                                var utc_offset = d.getTimezoneOffset();
-                                                var params = {from: self.options.position.start.getTime(), to: self.options.position.end.getTime(), utc_offset: utc_offset};
+						var d = new Date();
+						var utc_offset = d.getTimezoneOffset();
+						var params = {from: self.options.position.start.toMysqlFormat(), to: self.options.position.end.toMysqlFormat(), utc_offset: utc_offset};
 
 						if(browser_timezone.length) {
 							params.browser_timezone = browser_timezone;
 						}
 						$.ajax({
-							url: buildEventsUrl(source, params),
+							//url: buildEventsUrl(source, params),
+							url: source,
+							data: params,
 							dataType: 'json',
-							type: 'GET',
+							type: 'POST',
 							async: false
 						}).done(function(json) {
 							if(!json.success) {

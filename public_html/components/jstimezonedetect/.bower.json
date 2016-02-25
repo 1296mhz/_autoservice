@@ -45,6 +45,5 @@
   },
   "_source": "git://github.com/components/jstimezonedetect.git",
   "_target": "~1.0.5",
-  "_originalSource": "jstimezonedetect",
-  "_direct": true
+  "_originalSource": "jstimezonedetect"
 }
