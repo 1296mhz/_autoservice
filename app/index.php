@@ -253,6 +253,16 @@ Macaw::get('logout', function()
     }
 });
 
+function PopulateEvent( $event )
+{
+    return [
+        "user_owner_id" => User::retrieveByPK( $event->user_owner_id ),
+        "user_target_id" => User::retrieveByPK( $event->user_target_id ),
+        "customer_id" => Customer::retrieveByPK( $event->customer_id ),
+        "customer_car_id" => CustomerCar::retrieveByPK( $event->customer_car_id )
+    ];
+}
+
 // список событий
 Macaw::post('events', function()
 {
@@ -284,13 +294,16 @@ Macaw::post('events', function()
     $eventsData = [];
     foreach( $greaseRatEvents as $event )
     {
+        $eventData = PopulateEvent($event);
+
         array_push($eventsData, array(
             'id' => $event->id,
             'title' => decorateEventName( $event ),
             'class' => 'event-important',
             'start' => strtotime($utc_fix, strtotime($event->startdatetime) ) . '000',
             'end' => strtotime($utc_fix, strtotime($event->enddatetime) ) . '000',
-            'event' => $event
+            'event' => $event,
+            'eventData' => $eventData
         ));
     }
 
@@ -340,22 +353,23 @@ Macaw::post('event_actions', function()
 
         case "MOVE":
         {
-            if( !isset($_POST['startdatetime']) )
+            // TODO
+            if( !isset($_POST["data"]["formData"]['startdatetime']) )
             {
                 Application::sendJson( [
                     "err" => "UNDEFINED_START_TIME"
                 ]);
             }
 
-            if( !isset($_POST['enddatetime']) )
+            if( !isset($_POST["data"]["formData"]['enddatetime']) )
             {
                 Application::sendJson( [
                     "err" => "UNDEFINED_END_TIME"
                 ]);
             }
 
-            $event->startdatetime = $_POST["startdatetime"];
-            $event->enddatetime   = $_POST["enddatetime"];
+            $event->startdatetime = $_POST["data"]["formData"]["startdatetime"];
+            $event->enddatetime   = $_POST["data"]["formData"]["enddatetime"];
             $event->save();
             break;
         }

@@ -88,7 +88,6 @@ function CalendarController()
 
 			this.options = options;
 			this.eventData = options["eventData"] || {};
-			this.targetUser = options["targetUser"];
 
 			this.firstInit = false;
 
@@ -164,6 +163,16 @@ function CalendarController()
 		};
 
 		/**
+		 * Заполнить поле ввода
+		 *
+		 * @param $input
+		 */
+		FormController.prototype.setInput = function( $input, value )
+		{
+			$input.val(value);
+		};
+
+		/**
 		 * Заполнить select по словарю
 		 *
 		 * @param $select
@@ -221,28 +230,36 @@ function CalendarController()
 		 * @param event
 		 * @param options
          */
-		FormController.prototype.set = function(event, options)
+		FormController.prototype.set = function(event)
 		{
+			var eventData = event.event;
 			this.clear();
 
-			//this.options    = options;
-			//this.eventData  = options["eventData"] || {};
-			//this.targetUser = options["targetUser"];
-		};
+			// заполение селектов
+			this.fillSelect(this.$repair_post_id, this.options['repairPost']);
+			this.fillSelect(this.$repair_type_id, this.options['typeOfRepair']);
 
-		/**
-		 * Показать ошибки валидации
-		 *
-		 * @param errors
-         */
-		FormController.prototype.showErrors = function(errors)
-		{
-			//this.clear();
-			//this.options    = options;
-			//this.eventData  = options["eventData"] || {};
-			//this.targetUser = options["targetUser"];
-		};
+			this.eventData = {
+				"customer_car_id" : eventData["customer_car_id"],
+				"customer_id" : eventData["customer_id"],
+				"user_target_id" : eventData["customer_id"]
+			};
 
+			this.setInput( this.$enddatetime,  eventData["enddatetime"] );
+			this.setInput( this.$startdatetime,  eventData["startdatetime"] );
+
+			this.setInput( this.$customer_name,  event.eventData["customer_id"]["name"] );
+			this.setInput( this.$customer_phone,  event.eventData["customer_id"]["phone"] );
+
+			this.setInput( this.$customer_car_gv_number,  event.eventData["customer_car_id"]["gv_number"] );
+			this.setInput( this.$customer_car_mileage,  event.eventData["customer_car_id"]["mileage"] );
+			this.setInput( this.$customer_car_name,  event.eventData["customer_car_id"]["name"] );
+			this.setInput( this.$customer_car_vin,  event.eventData["customer_car_id"]["vin"] );
+
+			this.setInput( this.$user_target_name,  event.eventData["user_target_id"]["name"] );
+
+			console.log(eventData)
+		};
 
 		/**
 		 * Получить данные из формы
@@ -264,6 +281,25 @@ function CalendarController()
 				formData : formData,
 				eventData : this.eventData
 			};
+		};
+
+
+		/**
+		 * Показать ошибки валидации
+		 *
+		 * @param errors
+		 */
+		FormController.prototype.showErrors = function(errors)
+		{
+
+		};
+
+		/**
+		 * Проверка заполнения формы
+		 */
+		FormController.prototype.validateForm = function()
+		{
+
 		};
 
 		/**
@@ -494,7 +530,12 @@ function CalendarController()
 
 	var self = this;
 
-	this.handleCalendarAfterModalShown = function( event ) {
+	this.handleCalendarAfterModalHidden = function()
+	{
+		delete self.formEditEvent;
+	};
+
+	this.handleCalendarAfterModalShown = function( events ) {
 
 		var $modal = this.$modal,
 			$form = $modal.find('form'),
@@ -594,6 +635,14 @@ function CalendarController()
 				});
 			}.bind(this));
 		}
+
+		events.forEach(function(event)
+		{
+			if( event.id == _id )
+			{
+				self.formEditEvent.set(event);
+			}
+		});
 	};
 
 	/**
@@ -650,7 +699,6 @@ function CalendarController()
 				]
 			});
 
-
 			// переопределение обработчика нажатия на кнопке отправить
 			$saveBtn.off('click').on('click', function(e) {
 				$form.submit();
@@ -703,7 +751,9 @@ function CalendarController()
 			day: year+ "-" +month+ "-" +day,
 			onAfterEventsLoad: this.handleCalendarAfterEventsLoad,
 			onAfterViewLoad: this.handleCalendarAfterViewLoad,
-			onAfterModalShown: this.handleCalendarAfterModalShown
+			onAfterModalShown: this.handleCalendarAfterModalShown,
+			onAfterModalHidden: this.handleCalendarAfterModalHidden
+
 		};
 
 		this.options = $.extend(this.options, _options);
