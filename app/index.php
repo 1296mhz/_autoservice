@@ -82,39 +82,13 @@ Macaw::post('/users/(:any)/(:any)', function($field, $query)
     Application::sendJson( fetchSource('User', $field, $query, [ "name" ]) );
 });
 
-// создание события
-Macaw::post('/create_event', function()
+function processForm( $data, $user )
 {
-    $user = checkAuth();
-
     $gump = new GUMP();
-   // $_POST = $gump->sanitize($_POST);
-
-    if( !isset($_POST["formData"]) )
-    {
-        Application::sendJson( [
-            "err" => "UNDEFINED_FORM_DATA"
-        ]);
-    }
-
-    if( !isset($_POST["eventData"]) )
-    {
-        Application::sendJson( [
-            "err" => "UNDEFINED_EVENT_DATA"
-        ]);
-    }
-
-    if( !isset($_POST["eventData"]["user_target_id"]) )
-    {
-        Application::sendJson( [
-            "err" => "UNDEFINED_TARGET_USER"
-        ]);
-    }
-
-    $customer_id     = $_POST["eventData"]["customer_id"];
-    $customer_car_id = $_POST["eventData"]["customer_car_id"];
+    $data = $gump->sanitize($data);
 
     $gump->validation_rules(array(
+        'user_target_name' => 'required',
         'repair_post_id' => 'required|integer',
         'repair_type_id' => 'required|integer',
         'user_target_id' => 'required|integer',
@@ -125,10 +99,14 @@ Macaw::post('/create_event', function()
         'customer_car_name' => 'required',
         'customer_car_vin' => 'required',
         'customer_name' => 'required',
-        'customer_phone' => 'required'
+        'customer_phone' => 'required',
+        'customer_id' => 'integer',
+        'customer_car_id' => 'integer',
+        'id' => 'integer'
     ));
 
     $gump->filter_rules(array(
+        'user_target_name'       => 'trim|sanitize_string',
         'customer_car_gv_number' => 'trim|sanitize_string',
         'customer_car_name'      => 'trim|sanitize_string',
         'customer_car_vin'       => 'trim|sanitize_string',
@@ -136,7 +114,10 @@ Macaw::post('/create_event', function()
         'customer_phone'         => 'trim|sanitize_string'
     ));
 
-    $validated_data = $gump->run( $gump->sanitize($_POST["formData"]) );
+    $customer_car_id = null;
+    $customer_id = null;
+
+    $validated_data = $gump->run( $data );
 
     if( $validated_data )
     {
@@ -144,13 +125,13 @@ Macaw::post('/create_event', function()
         $customer = null;
 
         // добавляем авто
-        if( !isset($customer_car_id) )
+        if( !isset($validated_data['customer_car_id']) )
         {
             $customer_car = new CustomerCar();
         }
         else
         {
-            $customer_car = CustomerCar::retrieveByPK($customer_car_id);
+            $customer_car = CustomerCar::retrieveByPK($validated_data['customer_car_id']);
         }
 
         $customer_car->gv_number = $validated_data["customer_car_gv_number"];
@@ -162,21 +143,26 @@ Macaw::post('/create_event', function()
         {
             $customer_car->save();
             $customer_car_id = $customer_car->id;
+
+            Log::toDebug(["Save CustomerCar", $customer_car_id]);
+
         } catch( Exception $ex )
         {
-            Application::sendJson( [
+            Log::toDebug("ERROR_SAVE_TO_DATABASE");
+
+            return [
                 "err" => "ERROR_SAVE_TO_DATABASE"
-            ]);
+            ];
         }
 
         // добавляем заказчика
-        if( !isset($customer_id) )
+        if( !isset($validated_data['customer_id']) )
         {
             $customer = new Customer();
         }
         else
         {
-            $customer = Customer::retrieveByPK($customer_id);
+            $customer = Customer::retrieveByPK($validated_data['customer_id']);
         }
 
         $customer->name = $validated_data["customer_name"];
@@ -186,62 +172,75 @@ Macaw::post('/create_event', function()
         {
             $customer->save();
             $customer_id = $customer->id;
+
+            Log::toDebug(["Save CustomerCar", $customer_id]);
         } catch( Exception $ex )
         {
-            Application::sendJson( [
+            return [
                 "err" => "ERROR_SAVE_TO_DATABASE"
-            ]);
+            ];
         }
 
-        // проверяем что сохранилось в базу (хуета : переделать)
-        if( $customer_car_id || $customer_id )
+        try
         {
-            try
+            if( !isset($validated_data['id']) )
             {
                 $new_event = new GreaseRatEvent();
-
-                $new_event->repair_post_id = $validated_data["repair_post_id"];
-                $new_event->repair_type_id = $validated_data["repair_type_id"];
-                $new_event->user_owner_id  = $user->id;
-                $new_event->user_target_id = $validated_data["user_target_id"];
-
-                $new_event->state = 0;
-                $new_event->customer_id     = $customer_id;
-                $new_event->customer_car_id = $customer_car_id;
-
-                $new_event->startdatetime = $validated_data["startdatetime"];
-                $new_event->enddatetime   = $validated_data["enddatetime"];
-
-                $new_event->save();
-
-                Application::sendJson( [ event => $new_event ] );
-
-            } catch(Exception $ex)
-            {
-                Application::sendJson( [
-                    "err" => "ERROR_SAVE_TO_DATABASE"
-                ]);
             }
-        }
-        else
+            else
+            {
+                $new_event = GreaseRatEvent::retrieveByPK($validated_data['id']);
+            }
+
+            $new_event->repair_post_id  = $validated_data["repair_post_id"];
+            $new_event->repair_type_id  = $validated_data["repair_type_id"];
+
+            if( isset($user) ) $new_event->user_owner_id = $user->id;
+
+            $new_event->user_target_id  = $validated_data["user_target_id"];
+            $new_event->state           = 0;
+            $new_event->customer_id     = $customer_id;
+            $new_event->customer_car_id = $customer_car_id;
+            $new_event->startdatetime   = $validated_data["startdatetime"];
+            $new_event->enddatetime     = $validated_data["enddatetime"];
+
+            $new_event->save();
+
+            Log::toDebug(["Save rat event", $new_event->id]);
+
+            return [ 'event' => $new_event ];
+        } catch(Exception $ex)
         {
-            Application::sendJson( [
+            return [
                 "err" => "ERROR_SAVE_TO_DATABASE"
-            ]);
+            ];
         }
     }
     else
     {
-        Application::sendJson( [
+        return [
             "err" => "VALIDATE_FORM_ERROR",
-            "data" => $gump->get_readable_errors(),
-            "POST" => $_POST
-        ]);
+            "errors" => $gump->errors()
+        ];
     }
+}
 
-    Application::sendJson( [
-        "err" => "INTERNAL_ERROR"
-    ]);
+// создание события
+Macaw::post('/create_event', function()
+{
+    Log::toDebug("CREATE EVENT ROUTE");
+
+    $user = checkAuth();
+    Application::sendJson( processForm($_POST, $user) );
+});
+
+// вспомогательные данные
+Macaw::get('source', function()
+{
+    Log::toDebug("source");
+
+    $user = checkAuth();
+
 });
 
 // выход из системы
@@ -353,24 +352,15 @@ Macaw::post('event_actions', function()
 
         case "MOVE":
         {
-            // TODO
-            if( !isset($_POST["data"]["formData"]['startdatetime']) )
+            if( !isset($_POST["data"]) )
             {
                 Application::sendJson( [
-                    "err" => "UNDEFINED_START_TIME"
+                    "err" => "UNDEFINED_FORM_DATA"
                 ]);
             }
 
-            if( !isset($_POST["data"]["formData"]['enddatetime']) )
-            {
-                Application::sendJson( [
-                    "err" => "UNDEFINED_END_TIME"
-                ]);
-            }
-
-            $event->startdatetime = $_POST["data"]["formData"]["startdatetime"];
-            $event->enddatetime   = $_POST["data"]["formData"]["enddatetime"];
-            $event->save();
+            $_POST["data"]["id"] = intval($_POST['id']);
+            Application::sendJson( processForm($_POST["data"]) );
             break;
         }
         default:

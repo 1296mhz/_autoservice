@@ -60,17 +60,13 @@ function CalendarController()
 	this.handleExitButtonClick = function(e)
 	{
 		e.preventDefault();
-		window.location.href = '/api/logout.php';
+		window.location.href = '/logout';
 	};
 
 	this.formFactory = function( $form, options )
 	{
-		console.log("formFactory")
-
 		function FormController ($form, options)
 		{
-			console.log("FormController")
-
 			this.$form = $form;
 			this.$repair_post_id = $form.find('#repair_post_id');
 			this.$repair_type_id = $form.find('#repair_type_id');
@@ -99,20 +95,6 @@ function CalendarController()
 			warning : "has-warning",
 			error : "has-error"
 		};
-
-		const FORM_FIELDS = [
-			'repair_post_id',
-			'repair_type_id',
-			'user_target_name',
-			'customer_name',
-			'customer_phone',
-			'customer_car_vin',
-			'customer_car_gv_number',
-			'customer_car_name',
-			'customer_car_mileage',
-			'startdatetime',
-			'enddatetime'
-		];
 
 		/**
 		 * Установить состояния группы формы
@@ -215,6 +197,9 @@ function CalendarController()
 			// очищаем форму
 			this.resetCustomer();
 			this.resetCustomerCar();
+			this.resetInput(this.$user_target_name);
+
+			this.eventData = options["eventData"] || {};
 
 			var $self = this;
 			// очищаем все пометки об ошибках
@@ -245,20 +230,17 @@ function CalendarController()
 				"user_target_id" : eventData["customer_id"]
 			};
 
+			this.setInput( this.$repair_post_id,  eventData["repair_post_id"] );
+			this.setInput( this.$repair_type_id,  eventData["repair_type_id"] );
 			this.setInput( this.$enddatetime,  eventData["enddatetime"] );
 			this.setInput( this.$startdatetime,  eventData["startdatetime"] );
-
 			this.setInput( this.$customer_name,  event.eventData["customer_id"]["name"] );
 			this.setInput( this.$customer_phone,  event.eventData["customer_id"]["phone"] );
-
 			this.setInput( this.$customer_car_gv_number,  event.eventData["customer_car_id"]["gv_number"] );
 			this.setInput( this.$customer_car_mileage,  event.eventData["customer_car_id"]["mileage"] );
 			this.setInput( this.$customer_car_name,  event.eventData["customer_car_id"]["name"] );
 			this.setInput( this.$customer_car_vin,  event.eventData["customer_car_id"]["vin"] );
-
 			this.setInput( this.$user_target_name,  event.eventData["user_target_id"]["name"] );
-
-			console.log(eventData)
 		};
 
 		/**
@@ -274,13 +256,20 @@ function CalendarController()
 				formData["user_target_id"] = this.eventData["user_target_id"];
 			}
 
+			if( this.eventData["customer_id"] )
+			{
+				formData["customer_id"] = this.eventData["customer_id"];
+			}
+
+			if( this.eventData["customer_car_id"] )
+			{
+				formData["customer_car_id"] = this.eventData["customer_car_id"];
+			}
+
 			formData["startdatetime"] = this.$startdatetime.data("DateTimePicker").date().format('YYYY-MM-DD HH:mm:ss');
 			formData["enddatetime"]   = this.$enddatetime.data("DateTimePicker").date().format('YYYY-MM-DD HH:mm:ss');
 
-			return {
-				formData : formData,
-				eventData : this.eventData
-			};
+			return formData;
 		};
 
 
@@ -291,7 +280,16 @@ function CalendarController()
 		 */
 		FormController.prototype.showErrors = function(errors)
 		{
+			errors.forEach(function(error)
+			{
+				var $field = $("#" + error.field),
+					$formGroup = $field.length == 1 ? $field.bs3GetInputFormGroup() : undefined;
 
+				if( $formGroup )
+				{
+					this.setFormGroupState( $formGroup, FORM_GROUP_STATES.error );
+				}
+			}.bind(this));
 		};
 
 		/**
@@ -315,13 +313,13 @@ function CalendarController()
 
 				this.$startdatetime.datetimepicker({
 					locale: 'ru',
-					format: 'YYYY-MM-DD HH:mm',
+					format: 'YYYY-MM-DD HH:mm:ss',
 					defaultDate : Date.now()
 				});
 
 				this.$enddatetime.datetimepicker({
 					locale: 'ru',
-					format: 'YYYY-MM-DD HH:mm',
+					format: 'YYYY-MM-DD HH:mm:ss',
 					useCurrent: false,
 					defaultDate : Date.now()
 				});
@@ -564,7 +562,6 @@ function CalendarController()
 						"name" : "Бокс электрик3"
 					}
 				],
-
 				"typeOfRepair" : [
 					{
 						"id" : 0,
@@ -700,28 +697,7 @@ function CalendarController()
 			});
 
 			// переопределение обработчика нажатия на кнопке отправить
-			$saveBtn.off('click').on('click', function(e) {
-				$form.submit();
-			});
-
-			var handleFormDataSubmit = function(response)
-			{
-				if( response["err"] )
-				{
-					alert("Ошибка!: " + response["err"]);
-				}
-				else
-				{
-					alert("Событие создано!");
-					this.calendar.view();
-					$modal.modal('hide');
-				}
-
-				this.calendar.view();
-			};
-
-			// переопределение обработчика отправки формы
-			$form.off('submit').on('submit', function(e)
+			$saveBtn.off('click').on('click', function(e)
 			{
 				// отмена обработки события формы по умолчанию (чтобы не отправлялась браузером)
 				e.preventDefault();
@@ -731,11 +707,29 @@ function CalendarController()
 					type : "POST",
 					url : SERVER_URL,
 					data : this.formCreateEvent.getFormData(),
-					success : handleFormDataSubmit.bind(this)
-				});
+					success : function(response) {
+						if( response["err"] )
+						{
+							alert("Ошибка!: " + response["err"]);
 
+							if( response["errors"] )
+							{
+								this.formCreateEvent.showErrors(response["errors"]);
+							}
+						}
+						else
+						{
+							alert("Событие создано!");
+							this.calendar.view();
+							$modal.modal('hide');
+						}
+						//this.calendar.view();
+					}.bind(this)
+				});
 			}.bind(this));
 		}
+
+		this.formCreateEvent.clear();
 	};
 
 	this.init = function()
