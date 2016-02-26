@@ -333,9 +333,9 @@ Macaw::post('events', function()
     $sql = "SELECT * FROM :table WHERE startdatetime >= '" . $startdatetime . "' AND enddatetime <= '" . $enddatetime . "'";
     $greaseRatEvents = GreaseRatEvent::sql($sql);
 
-    function decorateEventName( $event )
+    function decorateEventName( $event, $eventData )
     {
-        return "Запись №: " . $event->id . " с " . $event->startdatetime . " по " . $event->enddatetime;
+        return "Запись №: " . $event->id . " " . $eventData["customer_car_id"]->name . " " . $eventData["customer_id"]->name;
     }
 
     $eventsData = [];
@@ -345,7 +345,7 @@ Macaw::post('events', function()
 
         array_push($eventsData, array(
             'id' => $event->id,
-            'title' => decorateEventName( $event ),
+            'title' => decorateEventName( $event, $eventData ),
             'class' => 'event-important',
             'start' => strtotime($utc_fix, strtotime($event->startdatetime) ) . '000',
             'end' => strtotime($utc_fix, strtotime($event->enddatetime) ) . '000',
@@ -395,6 +395,10 @@ Macaw::post('event_actions', function()
         case "DELETE":
         {
             $event->delete();
+
+            Application::sendJson([
+                "err" => "OK"
+            ]);
             break;
         }
 
@@ -408,20 +412,20 @@ Macaw::post('event_actions', function()
             }
 
             $_POST["data"]["id"] = intval($_POST['id']);
+
             Application::sendJson( processForm($_POST["data"]) );
             break;
         }
+
         default:
         {
             Application::sendJson( [
                 "err" => "UNDEFINED_ACTION"
             ]);
+            break;
         }
     }
 
-    Application::sendJson( [
-        "err" => "OK"
-    ]);
 });
 
 Macaw::error(function()

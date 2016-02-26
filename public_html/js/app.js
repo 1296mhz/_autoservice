@@ -227,6 +227,8 @@ function CalendarController()
 			// заполение селектов
 			this.fillSelect(this.$repair_post_id, this.options['repairPost']);
 			this.fillSelect(this.$repair_type_id, this.options['typeOfRepair']);
+			this.fillSelect(this.$state, this.options['state']);
+
 
 			this.eventData = {
 				"customer_car_id" : eventData["customer_car_id"],
@@ -237,8 +239,6 @@ function CalendarController()
 			this.setInput( this.$state, eventData["state"]);
 			this.setInput( this.$repair_post_id, eventData["repair_post_id"] );
 			this.setInput( this.$repair_type_id, eventData["repair_type_id"] );
-			this.setInput( this.$enddatetime, eventData["enddatetime"] );
-			this.setInput( this.$startdatetime, eventData["startdatetime"] );
 			this.setInput( this.$customer_name, event.eventData["customer_id"]["name"] );
 			this.setInput( this.$customer_phone, event.eventData["customer_id"]["phone"] );
 			this.setInput( this.$customer_car_gv_number, event.eventData["customer_car_id"]["gv_number"] );
@@ -246,6 +246,9 @@ function CalendarController()
 			this.setInput( this.$customer_car_name, event.eventData["customer_car_id"]["name"] );
 			this.setInput( this.$customer_car_vin, event.eventData["customer_car_id"]["vin"] );
 			this.setInput( this.$user_target_name, event.eventData["user_target_id"]["name"] );
+
+			this.$startdatetime.data("DateTimePicker").date( eventData["startdatetime"] );
+			this.$enddatetime.data("DateTimePicker").date( eventData["enddatetime"] );
 		};
 
 		/**
@@ -315,6 +318,7 @@ function CalendarController()
 				// заполение селектов
 				this.fillSelect(this.$repair_post_id, this.options['repairPost']);
 				this.fillSelect(this.$repair_type_id, this.options['typeOfRepair']);
+				this.fillSelect(this.$state, this.options['state']);
 
 				this.$startdatetime.datetimepicker({
 					locale: 'ru',
@@ -538,7 +542,8 @@ function CalendarController()
 		delete self.formEditEvent;
 	};
 
-	this.handleCalendarAfterModalShown = function( events ) {
+	this.handleCalendarAfterModalShown = function( events )
+	{
 
 		var $modal = this.$modal,
 			$form = $modal.find('form'),
@@ -584,6 +589,20 @@ function CalendarController()
 						"id" : 3,
 						"name" : "Очистка инжектора"
 					}
+				],
+				"state" : [
+					{
+						"id" : 0,
+						"name" : "Назначено"
+					},
+					{
+						"id" : 1,
+						"name" : "Выполнено"
+					},
+					{
+						"id" : 2,
+						"name" : "Отклонено"
+					}
 				]
 			});
 
@@ -604,10 +623,29 @@ function CalendarController()
 					{
 						if( data["err"] == "OK" )
 						{
-							this.view();
+							self.calendar.view();
+
 							$modal.modal('hide');
+
+							$.notify({
+								// options
+								message: 'Событие успешно удалено'
+							},{
+								// settings
+								type: 'info'
+							});
 						}
-					}.bind(this)
+						else
+						{
+							$.notify({
+								// options
+								message: 'Ошибка при удалении события: ' + data["err"]
+							},{
+								// settings
+								type: 'danger'
+							});
+						}
+					}
 				});
 
 			}.bind(this));
@@ -626,14 +664,38 @@ function CalendarController()
 						"id" : _id,
 						"data" : self.formEditEvent.getFormData()
 					},
-					success : function(data)
+					success : function(response)
 					{
-						if( data["err"] == "OK" )
+						if( response["err"] )
 						{
-							this.view();
+							$.notify({
+								// options
+								message: 'Ошибка при редактировании события: ' + response["err"]
+							},{
+								// settings
+								type: 'danger'
+							});
+
+							if( response["errors"] )
+							{
+								this.formEditEvent.showErrors(response["errors"]);
+							}
+						}
+						else
+						{
+							$.notify({
+								// options
+								message: 'Событие успешно изменено'
+							},{
+								// settings
+								type: 'info'
+							});
+
+							self.calendar.view();
+
 							$modal.modal('hide');
 						}
-					}.bind(this)
+					}
 				});
 			}.bind(this));
 		}
@@ -680,7 +742,6 @@ function CalendarController()
 						"name" : "Бокс электрик3"
 					}
 				],
-
 				"typeOfRepair" : [
 					{
 						"id" : 0,
@@ -697,6 +758,12 @@ function CalendarController()
 					{
 						"id" : 3,
 						"name" : "Очистка инжектора"
+					}
+				],
+				"state" : [
+					{
+						"id" : 0,
+						"name" : "Назначено"
 					}
 				]
 			});
