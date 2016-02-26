@@ -298,6 +298,15 @@ Macaw::get('source', function()
 
     $user = checkAuth();
 
+    Application::sendJson([
+        "repair_post" => RepairPost::all(),
+        "repair_type" => RepairType::all(),
+        "state" => [
+            [ "id" => 0, "name" => "Назначено" ],
+            [ "id" => 1, "name" => "Выполнено" ],
+            [ "id" => 2, "name" => "Отклонено" ]
+        ]
+    ]);
 });
 
 function PopulateEvent( $event )

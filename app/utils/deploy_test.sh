@@ -20,3 +20,25 @@ php add_customer_car.php Car5 5 vin05-345 345
 php add_customer_car.php Car6 6 vin06-678 678
 php add_customer_car.php Car7 7 vin07-901 901
 php add_customer_car.php Car8 8 vin08-234 234
+
+php add_repair_post.php "Пост1"
+php add_repair_type.php 1 "Работа1"
+php add_repair_type.php 1 "Работа2"
+php add_repair_type.php 1 "Работа3"
+php add_repair_type.php 1 "Работа4"
+php add_repair_type.php 1 "Работа5"
+
+php add_repair_post.php "Пост2"
+php add_repair_type.php 2 "Работа6"
+php add_repair_type.php 2 "Работа7"
+php add_repair_type.php 2 "Работа8"
+php add_repair_type.php 2 "Работа9"
+php add_repair_type.php 2 "Работа10"
+
+php add_repair_post.php "Пост3"
+php add_repair_type.php 3 "Ебать валы"
+
+php add_repair_post.php "Пост4"
+php add_repair_type.php 4 "Ебать валы"
+php add_repair_type.php 4 "Работа7"
+php add_repair_type.php 4 "Работа4"

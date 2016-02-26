@@ -83,10 +83,9 @@ function CalendarController()
 			this.$enddatetime = $form.find('#enddatetime');
 			this.$state = $form.find('#state');
 
-			this.clear();
-
 			this.options = options;
-			this.eventData = options["eventData"] || {};
+
+			this.clear();
 
 			this.firstInit = false;
 
@@ -163,13 +162,23 @@ function CalendarController()
 		 * @param $select
 		 * @param valuesDictionary
 		 */
-		FormController.prototype.fillSelect = function( $select, valuesDictionary )
+		FormController.prototype.fillSelect = function( $select, valuesDictionary, compare )
 		{
 			$select.empty();
 			valuesDictionary.forEach(function(option)
 			{
-				$select.append('<option value="' + option.id + '">' + option.name + "</option>");
-			});
+				if (compare)
+				{
+					if (compare(option))
+					{
+						$select.append('<option value="' + option.id + '">' + option.name + "</option>");
+					}
+				}
+				else
+				{
+					$select.append('<option value="' + option.id + '">' + option.name + "</option>");}
+				}
+			);
 		};
 
 		/**
@@ -203,7 +212,7 @@ function CalendarController()
 			this.resetInput(this.$user_target_name);
 			//this.resetInput(this.$state);
 
-			this.eventData = options["eventData"] || {};
+			this.eventData = this.options["eventData"] || {};
 
 			var $self = this;
 			// очищаем все пометки об ошибках
@@ -212,6 +221,8 @@ function CalendarController()
 				$self.setFormGroupState( $(this) );
 			});
 		};
+
+
 
 		/**
 		 * Заполение формы данными
@@ -224,20 +235,24 @@ function CalendarController()
 			var eventData = event.event;
 			this.clear();
 
-			// заполение селектов
-			this.fillSelect(this.$repair_post_id, this.options['repairPost']);
-			this.fillSelect(this.$repair_type_id, this.options['typeOfRepair']);
-			this.fillSelect(this.$state, this.options['state']);
-
-
 			this.eventData = {
 				"customer_car_id" : eventData["customer_car_id"],
 				"customer_id" : eventData["customer_id"],
 				"user_target_id" : eventData["customer_id"]
 			};
 
-			this.setInput( this.$state, eventData["state"]);
+			// заполение селектов
+			this.fillSelect(this.$repair_post_id, this.options['repair_post']);
 			this.setInput( this.$repair_post_id, eventData["repair_post_id"] );
+
+			this.fillSelect(this.$repair_type_id, this.options['repair_type'], function(option) {
+				return parseInt(option["repair_post"]) === parseInt(this.$repair_post_id.val());
+			}.bind(this));
+			this.fillSelect(this.$state, this.options['state']);
+
+
+			this.setInput( this.$state, eventData["state"]);
+
 			this.setInput( this.$repair_type_id, eventData["repair_type_id"] );
 			this.setInput( this.$customer_name, event.eventData["customer_id"]["name"] );
 			this.setInput( this.$customer_phone, event.eventData["customer_id"]["phone"] );
@@ -316,9 +331,13 @@ function CalendarController()
 			if( !this.firstInit )
 			{
 				// заполение селектов
-				this.fillSelect(this.$repair_post_id, this.options['repairPost']);
-				this.fillSelect(this.$repair_type_id, this.options['typeOfRepair']);
+				this.fillSelect(this.$repair_post_id, this.options['repair_post']);
+				this.fillSelect(this.$repair_type_id, this.options['repair_type'], function(option)
+				{
+					return parseInt(option["repair_post"]) === parseInt(this.$repair_post_id.val());
+				}.bind(this));
 				this.fillSelect(this.$state, this.options['state']);
+
 
 				this.$startdatetime.datetimepicker({
 					locale: 'ru',
@@ -339,6 +358,14 @@ function CalendarController()
 
 				this.$enddatetime.on("dp.change", function (e) {
 					this.$startdatetime.data("DateTimePicker").maxDate(e.date);
+				}.bind(this));
+
+
+				this.$repair_post_id.off('change').on('change', function() {
+					this.fillSelect(this.$repair_type_id, this.options['repair_type'], function(option)
+					{
+						return parseInt(option["repair_post"]) === parseInt(this.$repair_post_id.val());
+					}.bind(this));
 				}.bind(this));
 
 				var _copyTypeheadData = function(field, callback, data) {
@@ -544,7 +571,6 @@ function CalendarController()
 
 	this.handleCalendarAfterModalShown = function( events )
 	{
-
 		var $modal = this.$modal,
 			$form = $modal.find('form'),
 			$removeBtn = $modal.find('.btn-remove'),
@@ -553,58 +579,7 @@ function CalendarController()
 
 		if( !self.formEditEvent )
 		{
-			self.formEditEvent = self.formFactory($form, {
-				"repairPost" : [
-					{
-						"id" : 0,
-						"name" : "Бокс электрик"
-					},
-					{
-						"id" : 1,
-						"name" : "Бокс электрик1"
-					},
-					{
-						"id" : 2,
-						"name" : "Бокс электрик2"
-					},
-					{
-						"id" : 3,
-						"name" : "Бокс электрик3"
-					}
-				],
-				"typeOfRepair" : [
-					{
-						"id" : 0,
-						"name" : "Замена колес"
-					},
-					{
-						"id" : 1,
-						"name" : "Диагностика подвески"
-					},
-					{
-						"id" : 2,
-						"name" : "3D развал-схождение"
-					},
-					{
-						"id" : 3,
-						"name" : "Очистка инжектора"
-					}
-				],
-				"state" : [
-					{
-						"id" : 0,
-						"name" : "Назначено"
-					},
-					{
-						"id" : 1,
-						"name" : "Выполнено"
-					},
-					{
-						"id" : 2,
-						"name" : "Отклонено"
-					}
-				]
-			});
+			self.formEditEvent = self.formFactory($form, self.staticData);
 
 			$removeBtn.off('click').on('click', function(e)
 			{
@@ -723,50 +698,7 @@ function CalendarController()
 
 		if( !this.formCreateEvent )
 		{
-			this.formCreateEvent = this.formFactory($form, {
-				"repairPost" : [
-					{
-						"id" : 0,
-						"name" : "Бокс электрик"
-					},
-					{
-						"id" : 1,
-						"name" : "Бокс электрик1"
-					},
-					{
-						"id" : 2,
-						"name" : "Бокс электрик2"
-					},
-					{
-						"id" : 3,
-						"name" : "Бокс электрик3"
-					}
-				],
-				"typeOfRepair" : [
-					{
-						"id" : 0,
-						"name" : "Замена колес"
-					},
-					{
-						"id" : 1,
-						"name" : "Диагностика подвески"
-					},
-					{
-						"id" : 2,
-						"name" : "3D развал-схождение"
-					},
-					{
-						"id" : 3,
-						"name" : "Очистка инжектора"
-					}
-				],
-				"state" : [
-					{
-						"id" : 0,
-						"name" : "Назначено"
-					}
-				]
-			});
+			this.formCreateEvent = this.formFactory($form, this.staticData);
 
 			// переопределение обработчика нажатия на кнопке отправить
 			$saveBtn.off('click').on('click', function(e)
@@ -892,7 +824,7 @@ function CalendarController()
 
 	this.loadStatic = function( callback )
 	{
-		$.getJSON('api/static.json', function(data)
+		$.getJSON('source', function(data)
 		{
 			this.staticData = data;
 			callback( this.staticData );
