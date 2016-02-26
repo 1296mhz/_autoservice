@@ -58,6 +58,62 @@ Macaw::get('/', function()
     ]));
 });
 
+Macaw::get('/sign', function()
+{
+    $user = getUser();
+    if( $user )
+    {
+        redirect("/");
+    }
+    else
+    {
+        Application::sendHTMLString( Application::template(dirname(__FILE__) . "/templates/signin.html", []));
+    }
+});
+
+Macaw::post('/sign', function()
+{
+    $user = getUser();
+
+    if( $user )
+    {
+        redirect("/");
+    }
+    else
+    {
+        $gump = new GUMP();
+        $data = $gump->sanitize($_POST);
+
+        $gump->validation_rules(array(
+            'password' => 'required',
+            'username' => 'required'
+        ));
+
+        $validated_data = $gump->run( $data );
+
+        if( $validated_data && authUser( $validated_data['username'], $validated_data['password'] ) )
+        {
+            redirect("/");
+        }
+        else
+        {
+            redirectToLogin();
+            //authUser( $validated_data['username'], $validated_data['password'] );
+        }
+    }
+});
+
+
+// выход из системы
+Macaw::get('logout', function()
+{
+    if( exitUser() )
+    {
+        redirectToLogin();
+    }
+});
+
+
 // Поиск по пользователям
 Macaw::post('/customer_sources/(:any)/(:any)', function($field, $query)
 {
@@ -102,7 +158,8 @@ function processForm( $data, $user )
         'customer_phone' => 'required',
         'customer_id' => 'integer',
         'customer_car_id' => 'integer',
-        'id' => 'integer'
+        'id' => 'integer',
+        'state' => 'required|integer'
     ));
 
     $gump->filter_rules(array(
@@ -198,7 +255,7 @@ function processForm( $data, $user )
             if( isset($user) ) $new_event->user_owner_id = $user->id;
 
             $new_event->user_target_id  = $validated_data["user_target_id"];
-            $new_event->state           = 0;
+            $new_event->state           = $validated_data["state"];
             $new_event->customer_id     = $customer_id;
             $new_event->customer_car_id = $customer_car_id;
             $new_event->startdatetime   = $validated_data["startdatetime"];
@@ -241,15 +298,6 @@ Macaw::get('source', function()
 
     $user = checkAuth();
 
-});
-
-// выход из системы
-Macaw::get('logout', function()
-{
-    if( exitUser() )
-    {
-        setAuthHeaders();
-    }
 });
 
 function PopulateEvent( $event )

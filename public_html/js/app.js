@@ -1,5 +1,7 @@
 "use strict";
 
+
+
 function CalendarController()
 {
 	this.options = {
@@ -79,6 +81,7 @@ function CalendarController()
 			this.$customer_car_mileage = $form.find('#customer_car_mileage');
 			this.$startdatetime = $form.find('#startdatetime');
 			this.$enddatetime = $form.find('#enddatetime');
+			this.$state = $form.find('#state');
 
 			this.clear();
 
@@ -198,6 +201,7 @@ function CalendarController()
 			this.resetCustomer();
 			this.resetCustomerCar();
 			this.resetInput(this.$user_target_name);
+			//this.resetInput(this.$state);
 
 			this.eventData = options["eventData"] || {};
 
@@ -230,17 +234,18 @@ function CalendarController()
 				"user_target_id" : eventData["customer_id"]
 			};
 
-			this.setInput( this.$repair_post_id,  eventData["repair_post_id"] );
-			this.setInput( this.$repair_type_id,  eventData["repair_type_id"] );
-			this.setInput( this.$enddatetime,  eventData["enddatetime"] );
-			this.setInput( this.$startdatetime,  eventData["startdatetime"] );
-			this.setInput( this.$customer_name,  event.eventData["customer_id"]["name"] );
-			this.setInput( this.$customer_phone,  event.eventData["customer_id"]["phone"] );
-			this.setInput( this.$customer_car_gv_number,  event.eventData["customer_car_id"]["gv_number"] );
-			this.setInput( this.$customer_car_mileage,  event.eventData["customer_car_id"]["mileage"] );
-			this.setInput( this.$customer_car_name,  event.eventData["customer_car_id"]["name"] );
-			this.setInput( this.$customer_car_vin,  event.eventData["customer_car_id"]["vin"] );
-			this.setInput( this.$user_target_name,  event.eventData["user_target_id"]["name"] );
+			this.setInput( this.$state, eventData["state"]);
+			this.setInput( this.$repair_post_id, eventData["repair_post_id"] );
+			this.setInput( this.$repair_type_id, eventData["repair_type_id"] );
+			this.setInput( this.$enddatetime, eventData["enddatetime"] );
+			this.setInput( this.$startdatetime, eventData["startdatetime"] );
+			this.setInput( this.$customer_name, event.eventData["customer_id"]["name"] );
+			this.setInput( this.$customer_phone, event.eventData["customer_id"]["phone"] );
+			this.setInput( this.$customer_car_gv_number, event.eventData["customer_car_id"]["gv_number"] );
+			this.setInput( this.$customer_car_mileage, event.eventData["customer_car_id"]["mileage"] );
+			this.setInput( this.$customer_car_name, event.eventData["customer_car_id"]["name"] );
+			this.setInput( this.$customer_car_vin, event.eventData["customer_car_id"]["vin"] );
+			this.setInput( this.$user_target_name, event.eventData["user_target_id"]["name"] );
 		};
 
 		/**
@@ -710,7 +715,13 @@ function CalendarController()
 					success : function(response) {
 						if( response["err"] )
 						{
-							alert("Ошибка!: " + response["err"]);
+							$.notify({
+								// options
+								message: 'Ошибка при добавлении события: ' + response["err"]
+							},{
+								// settings
+								type: 'danger'
+							});
 
 							if( response["errors"] )
 							{
@@ -719,7 +730,14 @@ function CalendarController()
 						}
 						else
 						{
-							alert("Событие создано!");
+							$.notify({
+								// options
+								message: 'Событие успешно добавлено'
+							},{
+								// settings
+								type: 'info'
+							});
+
 							this.calendar.view();
 							$modal.modal('hide');
 						}

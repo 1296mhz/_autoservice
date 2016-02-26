@@ -24,6 +24,7 @@
     "bootstrap": "~3.3.6",
     "jquery-validation": "https://github.com/jzaefferer/jquery-validation.git#~1.14.0",
     "jquery-ui": "^1.11.4",
-    "bootstrap3-typeahead": "git://github.com/bassjobsen/Bootstrap-3-Typeahead.git#master"
+    "bootstrap3-typeahead": "git://github.com/bassjobsen/Bootstrap-3-Typeahead.git#master",
+    "remarkable-bootstrap-notify": "^3.1.3"
   }
 }
