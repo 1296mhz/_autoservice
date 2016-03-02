@@ -319,6 +319,17 @@ function PopulateEvent( $event )
     ];
 }
 
+
+function buildQueryAndEqStatement( $name, $value, $op = "=", $escape = false )
+{
+    if( $escape )
+    {
+        return " AND {$name}{$op}'{$value}' ";
+    }
+
+    return " AND {$name}{$op}{$value} ";
+}
+
 // список событий
 Macaw::post('events', function()
 {
@@ -328,6 +339,13 @@ Macaw::post('events', function()
 
     $startdatetime = "";
     $enddatetime   = "";
+
+    //$user_owner_id  = isset($_POST["user_owner_id"]);
+
+    $repair_post_id = isset($_POST["repair_post_id"]) ? intval($_POST["repair_post_id"]) : null;
+    $repair_type_id = isset($_POST["repair_type_id"]) ? intval($_POST["repair_type_id"]) : null;
+    $user_target_id = isset($_POST["user_target_id"]) ? intval($_POST["user_target_id"]) : null;
+    $state          = isset($_POST["state"]) ? intval($_POST["state"]) : null;
 
     if( isset($_POST["from"]) )
     {
@@ -339,8 +357,34 @@ Macaw::post('events', function()
         $enddatetime = $_POST["to"];
     }
 
+    Log::toDebug(print_r($_POST, true));
 
-    $sql = "SELECT * FROM :table WHERE startdatetime >= '" . $startdatetime . "' AND enddatetime <= '" . $enddatetime . "'";
+    $sql  = "SELECT * FROM :table WHERE 1";
+    $sql .= buildQueryAndEqStatement("startdatetime", $startdatetime, ">=", true);
+    $sql .= buildQueryAndEqStatement("enddatetime", $enddatetime, "<=", true);
+
+    if( $repair_post_id != null )
+    {
+        $sql .= buildQueryAndEqStatement("repair_post_id", $repair_post_id, "=", false);
+    }
+
+    if( $repair_type_id != null )
+    {
+        $sql .= buildQueryAndEqStatement("repair_type_id", $repair_type_id, "=", false);
+    }
+
+    if( $user_target_id != null )
+    {
+        $sql .= buildQueryAndEqStatement("user_target_id", $user_target_id, "=", false);
+    }
+
+    if( $state != null )
+    {
+        $sql .= buildQueryAndEqStatement("state", $state, "=", false);
+    }
+
+    Log::toDebug($sql);
+
     $greaseRatEvents = GreaseRatEvent::sql($sql);
 
     function decorateEventName( $event, $eventData )

@@ -391,7 +391,7 @@ if(!String.prototype.formatNum) {
 
 		context.css('width', this.options.width).addClass('cal-context');
 
-		this.view();
+		//this.view();
 		return this;
 	}
 
@@ -890,6 +890,13 @@ if(!String.prototype.formatNum) {
 		return this.options.position.end;
 	}
 
+	Calendar.prototype.setFilter = function(filter) {
+
+		console.log("Calendar.setFilter")
+
+		this.filter = filter;
+	}
+
 	Calendar.prototype._loadEvents = function() {
 		var self = this;
 		var source = null;
@@ -918,10 +925,15 @@ if(!String.prototype.formatNum) {
 						var events = [];
 						var d = new Date();
 						var utc_offset = d.getTimezoneOffset();
+
 						var params = {
 							from: self.options.position.start.toMysqlFormat(),
 							to: self.options.position.end.toMysqlFormat(), utc_offset: utc_offset
 						};
+
+						_.extend(params, self.filter || {});
+
+						console.log(params)
 
 						if(browser_timezone.length) {
 							params.browser_timezone = browser_timezone;

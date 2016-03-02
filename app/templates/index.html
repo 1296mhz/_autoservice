@@ -43,7 +43,6 @@
         </div>
         <button class="btn btn-success navbar-btn" data-toggle="modal" data-target="#createEvent">Добавить событие</button>
         <button class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#listEvents">Все события в текущем периоде</button>
-        <!--<button class="btn btn-warning navbar-btn" data-toggle="modal" data-target="#report">Отчет</button>-->
         <button class="btn btn-danger navbar-btn btn-exit">Выйти</button>
         <p class="navbar-text navbar-right">Привет: <a href="#" class="navbar-link"><?php echo $user->name; ?></a>&nbsp;[<?php echo ViewDecorators::decorateRole($user->role); ?>]</p>
     </div>
@@ -73,9 +72,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <select class="form-control selectpicker-ext" id="user_select">
-                        <option value="-1">Мастер (исполнитель)</option>
-                    </select>
+                    <input class="form-control" id="user_select" value="" />
                 </div>
                 <div class="form-group selectpicker-ext">
                     <select class="form-control" id="state_select">

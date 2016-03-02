@@ -1,6 +1,17 @@
 "use strict";
 
-
+var _copyTypeheadData = function(field, callback, data) {
+	var _data = [];
+	data.forEach(function(v)
+	{
+		_data.push({
+			id : v.id,
+			name : v[field],
+			_data : v
+		})
+	});
+	callback(_data);
+};
 
 function CalendarController()
 {
@@ -366,18 +377,7 @@ function CalendarController()
 					}.bind(this));
 				}.bind(this));
 
-				var _copyTypeheadData = function(field, callback, data) {
-					var _data = [];
-					data.forEach(function(v)
-					{
-						_data.push({
-							id : v.id,
-							name : v[field],
-							_data : v
-						})
-					});
-					callback(_data);
-				};
+
 
 				// инциализация автодополнения
 				this.$user_target_name.typeahead({
@@ -761,7 +761,8 @@ function CalendarController()
 		this.calendar = $('#calendar').calendar(this.options);
 
 
-		console.log( this.staticData);
+
+		console.log( this.staticData );
 
 		var _fillRepairSelect = function()
 		{
@@ -820,6 +821,103 @@ function CalendarController()
 		// state
 		_fillStateSelect();
 
+		this.filter = {};
+
+		var _self = this;
+
+		$('#repair_select').off('change').on('change', function(e)
+		{
+			var _selectedValue = $(this.options[e.target.selectedIndex]).val(),
+				_repair = _selectedValue.split(":");
+
+			console.log(_repair)
+
+			if( _selectedValue == -1 )
+			{
+				if( _self.filter["repair_post_id"] )
+				{
+					delete _self.filter["repair_post_id"];
+				}
+
+				if( _self.filter["repair_type_id"] )
+				{
+					delete _self.filter["repair_type_id"];
+				}
+			}
+			else
+			{
+				_self.filter["repair_post_id"] = _repair[0];
+				_self.filter["repair_type_id"] = _repair[1];
+			}
+
+			_self.calendar.setFilter( _self.filter );
+			_self.calendar.view();
+		});
+
+
+		$('#state_select').off('change').on('change', function(e)
+		{
+			var _selectedValue = $(this.options[e.target.selectedIndex]).val();
+
+			if( _selectedValue == -1 )
+			{
+				if( _self.filter["state"] )
+				{
+					delete _self.filter["state"];
+				}
+			}
+			else
+			{
+				_self.filter["state"] = _selectedValue;
+			}
+
+			_self.calendar.setFilter( _self.filter );
+			_self.calendar.view();
+		});
+
+		// инциализация автодополнения
+		$('#user_select').typeahead({
+			source: function(query, callback)
+			{
+				$.ajax({
+					type : "POST",
+					url : '/users/name/' + query,
+					success : _copyTypeheadData.bind(null, "name", callback)
+				});
+			},
+			autoSelect : true
+		});
+
+		$('#user_select').off('change').on('change', function(e)
+		{
+			var current = $('#user_select').typeahead("getActive");
+
+			if (current)
+			{
+				if (current.name == $('#user_select').val())
+				{
+					_self.filter["user_target_id"] = current.id;
+				}
+				else
+				{
+					if( _self.filter["user_target_id"] )
+					{
+						delete _self.filter["user_target_id"];
+					}
+				}
+			}
+			else
+			{
+				if( _self.filter["user_target_id"] )
+				{
+					delete _self.filter["user_target_id"];
+				}
+			}
+
+			_self.calendar.setFilter( _self.filter );
+			_self.calendar.view();
+		});
+
 
 		$('.selectpicker-ext').selectpicker();
 
@@ -874,6 +972,9 @@ function CalendarController()
 
 		$('#createEvent').off('show.bs.modal').on('show.bs.modal', this.handleShowEventForm.bind(this));
 		$('.btn-exit').off('click').on('click', this.handleExitButtonClick.bind(this));
+
+
+		this.calendar.view();
 	};
 
 	this.loadStatic = function( callback )
