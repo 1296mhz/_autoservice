@@ -2,5 +2,3 @@
 /logs
 /public_html/adminer-4.2.4-mysql-en.php
 /.idea
-/base.password
-/app/__mysql.php

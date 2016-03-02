@@ -1,20 +1,129 @@
-<% 	event.date_start = new Date(parseInt(event.start));
-	event.date_end = new Date(parseInt(event.end)); %>
-<form class="form-horizontal " id="createEventForm">
+<%
+    event.date_start = event.start;
+	event.date_end = event.end;
+%>
+<form class="form-horizontal" id="editEventForm">
+
+    <!-- Ремонтный пост-->
+    <div class="form-group">
+        <label for="repair_post_id" class="col-sm-4 control-label">Ремонтный пост</label>
+        <div class="col-sm-8">
+            <select class="form-control" id="repair_post_id" name="repair_post_id"></select>
+        </div>
+    </div>
+
+    <!-- Вид работы -->
+    <div class="form-group">
+        <label for="repair_type_id" class="col-sm-4 control-label">Вид работы</label>
+        <div class="col-sm-8">
+            <select class="form-control" id="repair_type_id" name="repair_type_id"></select>
+        </div>
+    </div>
+
+    <!-- Мастер (исполнитель) -->
+    <div class="form-group">
+        <label for="user_target_name" class="col-sm-4 control-label">Мастер (исполнитель)</label>
+        <div class="col-sm-8">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input type="text" class="form-control" name="user_target_name" id="user_target_name" data-provide="typeahead" autocomplete="off">
+            </div>
+            <span class="glyphicon form-control-feedback"></span>
+        </div>
+    </div>
+
+    <!-- Заказчик: ФИО -->
+    <div class="form-group">
+        <label for="customer_name" class="col-sm-4 control-label">Заказчик: ФИО</label>
+        <div class="col-sm-8">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input type="text" class="form-control" name="customer_name" id="customer_name" data-provide="typeahead" autocomplete="off">
+            </div>
+            <span class="glyphicon form-control-feedback"></span>
+        </div>
+    </div>
+
+    <!-- Заказчик: телефон -->
+    <div class="form-group">
+        <label for="customer_phone" class="col-sm-4 control-label">Заказчик: телефон</label>
+        <div class="col-sm-8">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+                <input type="text" class="form-control" name="customer_phone" id="customer_phone" data-provide="typeahead" autocomplete="off">
+            </div>
+            <span class="glyphicon form-control-feedback"></span>
+        </div>
+    </div>
+
+    <!-- Заказчик: VIN авто -->
+    <div class="form-group">
+        <label for="customer_car_vin" class="col-sm-4 control-label">Заказчик: VIN авто</label>
+        <div class="col-sm-8">
+            <input type="text" class="form-control" name="customer_car_vin" id="customer_car_vin" data-provide="typeahead" autocomplete="off">
+            <span class="glyphicon form-control-feedback"></span>
+        </div>
+    </div>
+
+    <!-- Заказчик: Гос. номер авто -->
+    <div class="form-group">
+        <label for="customer_car_gv_number" class="col-sm-4 control-label">Заказчик: Гос. номер авто</label>
+        <div class="col-sm-8">
+            <input type="text" class="form-control" name="customer_car_gv_number" id="customer_car_gv_number" data-provide="typeahead" autocomplete="off">
+            <span class="glyphicon form-control-feedback"></span>
+        </div>
+    </div>
+
+    <!-- Заказчик: Модель авто -->
+    <div class="form-group">
+        <label for="customer_car_name" class="col-sm-4 control-label">Заказчик: Модель авто</label>
+        <div class="col-sm-8">
+            <input type="text" class="form-control" name="customer_car_name" id="customer_car_name" data-provide="typeahead" autocomplete="off">
+            <span class="glyphicon form-control-feedback"></span>
+        </div>
+    </div>
+
+    <!-- Заказчик: Пробег авто -->
+    <div class="form-group">
+        <label for="customer_car_mileage" class="col-sm-4 control-label">Заказчик: Пробег авто</label>
+        <div class="col-sm-8">
+            <input type="text" class="form-control" name="customer_car_mileage" id="customer_car_mileage" data-provide="typeahead" autocomplete="off">
+            <span class="glyphicon form-control-feedback"></span>
+        </div>
+    </div>
+
     <!-- Начало в-->
     <div class="form-group">
         <label for="startdatetime" class="col-sm-4 control-label">Начало в:</label>
-        <div class='input-group date col-sm-8'>
-            <input type='text' class="form-control" id="startdatetime" name="startdatetime" required="required" value="<%= event.date_start %>" />
-            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+        <div class='col-sm-8'>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                <input type='text' class="form-control" id="startdatetime" name="startdatetime" />
+            </div>
+            <span class="glyphicon form-control-feedback"></span>
         </div>
     </div>
+
     <!-- Окончание в-->
     <div class="form-group">
-        <label for="enddatetime" class="col-sm-4 control-label">Окончание в:</label>
-        <div class='input-group date col-sm-8'>
-            <input type='text' class="form-control" id="enddatetime" name="enddatetime" required="required" value="<%= event.date_end %>"/>
-            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+        <label for="enddatetime" class="col-sm-4 control-label">Завершение в:</label>
+        <div class='col-sm-8'>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                <input type='text' class="form-control" id="enddatetime" name="enddatetime" />
+            </div>
+            <span class="glyphicon form-control-feedback"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="state" class="col-sm-4 control-label">Статус</label>
+        <div class="col-sm-8">
+            <select class="form-control" id="state" name="state">
+                <option value="0">Назначено</option>
+                <option value="1">Выполнено</option>
+                <option value="2">Отклонено</option>
+            </select>
         </div>
     </div>
 </form>
