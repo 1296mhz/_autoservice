@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="/css/calendar.css">
     <link rel="stylesheet" href="/css/dashboard.css">
     <link rel="stylesheet" href="/components/jquery-ui/themes/base/jquery-ui.min.css">
+    <link rel="stylesheet" href="/components/bootstrap-select/dist/css/bootstrap-select.min.css">
+
 
     <script type="text/javascript" src="/components/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="/components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -25,6 +27,8 @@
     <script type="text/javascript" src="/components/jquery-ui/jquery-ui.min.js"></script>
     <script type="text/javascript" src="/components/bootstrap3-typeahead/bootstrap3-typeahead.js"></script>
     <script type="text/javascript" src="/components/remarkable-bootstrap-notify/bootstrap-notify.js"></script>
+    <script type="text/javascript" src="/components/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+    <script type="text/javascript" src="/components/store2/dist/store2.min.js"></script>
 
     <script type="text/javascript" src="/js/language/ru-RU.js"></script>
     <script type="text/javascript" src="/js/calendar.js"></script>
@@ -64,22 +68,17 @@
 
             <div class="form-inline">
                 <div class="form-group">
-                    <select class="form-control" id="exampleInputEmail3">
+                    <select class="form-control selectpicker-ext" id="repair_select">
                         <option value="-1">Ремонтный пост</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <select class="form-control" id="exampleInputPassword3">
-                        <option value="-1">Вид работы</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <select class="form-control" id="exampleInputPassword2">
+                    <select class="form-control selectpicker-ext" id="user_select">
                         <option value="-1">Мастер (исполнитель)</option>
                     </select>
                 </div>
-                <div class="form-group">
-                    <select class="form-control" id="exampleInputPassword4">
+                <div class="form-group selectpicker-ext">
+                    <select class="form-control" id="state_select">
                         <option value="-1">Статус</option>
                     </select>
                 </div>

@@ -918,13 +918,16 @@ if(!String.prototype.formatNum) {
 						var events = [];
 						var d = new Date();
 						var utc_offset = d.getTimezoneOffset();
-						var params = {from: self.options.position.start.toMysqlFormat(), to: self.options.position.end.toMysqlFormat(), utc_offset: utc_offset};
+						var params = {
+							from: self.options.position.start.toMysqlFormat(),
+							to: self.options.position.end.toMysqlFormat(), utc_offset: utc_offset
+						};
 
 						if(browser_timezone.length) {
 							params.browser_timezone = browser_timezone;
 						}
+
 						$.ajax({
-							//url: buildEventsUrl(source, params),
 							url: source,
 							data: params,
 							dataType: 'json',
@@ -997,6 +1000,7 @@ if(!String.prototype.formatNum) {
 			self.options.day = $(this).data('cal-date');
 			self.view(view);
 		});
+
 		$('.cal-cell').dblclick(function() {
 			var view = $('[data-cal-date]', this).data('cal-view');
 			self.options.day = $('[data-cal-date]', this).data('cal-date');
@@ -1006,7 +1010,6 @@ if(!String.prototype.formatNum) {
 		this['_update_' + this.options.view]();
 
 		this._update_modal();
-
 	};
 
 	Calendar.prototype._update_modal = function() {
@@ -1139,6 +1142,7 @@ if(!String.prototype.formatNum) {
 		self.context.find('a.event').mouseenter(function() {
 			$('a[data-event-id="' + $(this).data('event-id') + '"]').closest('.cal-cell1').addClass('day-highlight dh-' + $(this).data('event-class'));
 		});
+
 		self.context.find('a.event').mouseleave(function() {
 			$('div.cal-cell1').removeClass('day-highlight dh-' + $(this).data('event-class'));
 		});

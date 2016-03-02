@@ -222,8 +222,6 @@ function CalendarController()
 			});
 		};
 
-
-
 		/**
 		 * Заполение формы данными
 		 *
@@ -751,24 +749,80 @@ function CalendarController()
 
 	this.init = function()
 	{
-		this.currentDate = new Date();
-
-		var month = this.currentDate.getMonthFormatted();
-		var year  = this.currentDate.getFullYear();
-		var day   = this.currentDate.getDate();
-
 		var _options =
 		{
-			day: year+ "-" +month+ "-" +day,
 			onAfterEventsLoad: this.handleCalendarAfterEventsLoad,
 			onAfterViewLoad: this.handleCalendarAfterViewLoad,
 			onAfterModalShown: this.handleCalendarAfterModalShown,
 			onAfterModalHidden: this.handleCalendarAfterModalHidden
-
 		};
 
 		this.options = $.extend(this.options, _options);
 		this.calendar = $('#calendar').calendar(this.options);
+
+
+		console.log( this.staticData);
+
+		var _fillRepairSelect = function()
+		{
+			// ремонтные посты
+			var $_select = $('#repair_select');
+			var _repairPostDict = this.staticData["repair_post"];
+			Object.keys(_repairPostDict).forEach(function(key)
+			{
+				var value = _repairPostDict[key],
+					$optgroup = $('<optgroup></optgroup>');
+
+				$optgroup.attr('label', value.name);
+
+				var _repairTypesDict = this.staticData["repair_type"].filter(function(f_value){
+					if( f_value["repair_post"] == value.id )
+					{
+						return f_value;
+					}
+				});
+
+				Object.keys(_repairTypesDict).forEach(function(_key){
+					var _value = _repairTypesDict[_key],
+						$opt = $('<option>' + _value.name + '</option>');
+					$opt.val( value.id + ":" +_value.id );
+					$opt.data('group_value', {
+						repair_post_id : parseInt( value.id ),
+						repair_type_id : parseInt( _value.id )
+					});
+
+					$optgroup.append($opt)
+				});
+
+				$_select.append($optgroup);
+			}.bind(this));
+		}.bind(this);
+
+
+		var _fillStateSelect = function()
+		{
+			// ремонтные посты
+			var $_select = $('#state_select');
+			var _stateDict = this.staticData["state"];
+
+			Object.keys(_stateDict).forEach(function(key)
+			{
+				var value = _stateDict[key],
+					$opt = $('<option>' + value.name + '</option>');
+
+				$opt.val( value.id );
+				$_select.append($opt);
+			}.bind(this));
+		}.bind(this);
+
+
+		_fillRepairSelect();
+		// state
+		_fillStateSelect();
+
+
+		$('.selectpicker-ext').selectpicker();
+
 
 		$('.btn-group button[data-calendar-nav]').off('click').on('click',function(e)
 		{

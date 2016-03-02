@@ -2,7 +2,7 @@
 include_once(dirname(__FILE__) . "/Logger.php");
 
 $log = logger::getInstance();
-$log->logfile = dirname(__FILE__) . '/logs/app.log';
+$log->logfile = dirname(__FILE__) . '/../logs/app.log';
 
 class Log
 {

@@ -339,6 +339,7 @@ Macaw::post('events', function()
         $enddatetime = $_POST["to"];
     }
 
+
     $sql = "SELECT * FROM :table WHERE startdatetime >= '" . $startdatetime . "' AND enddatetime <= '" . $enddatetime . "'";
     $greaseRatEvents = GreaseRatEvent::sql($sql);
 
