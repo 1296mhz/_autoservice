@@ -1384,3 +1384,1106 @@
 )
  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
 1456902800 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND repair_post_id=4  AND repair_type_id=13  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903109 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [repair_post_id] => 1
+    [repair_type_id] => 3
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903109 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND repair_post_id=1  AND repair_type_id=3  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903111 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [repair_post_id] => 2
+    [repair_type_id] => 9
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903111 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND repair_post_id=2  AND repair_type_id=9  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903112 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903112 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903115 - Array
+(
+    [from] => 2016-03-31 19:00:00
+    [to] => 2016-04-30 19:00:00
+    [utc_offset] => -300
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903115 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-03-31 19:00:00'  AND enddatetime<='2016-04-30 19:00:00'  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903116 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903116 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903515 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903515 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903515 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903517 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [repair_post_id] => 1
+    [repair_type_id] => 4
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903517 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND repair_post_id=1  AND repair_type_id=4  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903518 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903518 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903518 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903522 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903522 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903522 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903526 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [repair_post_id] => 1
+    [repair_type_id] => 3
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903526 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND repair_post_id=1  AND repair_type_id=3  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903528 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903528 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903528 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903550 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [repair_post_id] => 1
+    [repair_type_id] => 2
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903550 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND repair_post_id=1  AND repair_type_id=2  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903552 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [repair_post_id] => 1
+    [repair_type_id] => 2
+    [state] => 1
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903552 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND repair_post_id=1  AND repair_type_id=2  AND state=1  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903554 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903554 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903554 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903559 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903559 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903559 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903610 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903610 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903610 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903612 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [repair_post_id] => 1
+    [repair_type_id] => 2
+    [state] => 1
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903612 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND repair_post_id=1  AND repair_type_id=2  AND state=1  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903614 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903614 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903614 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903615 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [repair_post_id] => 1
+    [repair_type_id] => 4
+    [state] => 1
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903615 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND repair_post_id=1  AND repair_type_id=4  AND state=1  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903617 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903617 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903617 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903692 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903693 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903693 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903695 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [repair_post_id] => 1
+    [repair_type_id] => 4
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903695 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND repair_post_id=1  AND repair_type_id=4  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903696 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903697 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903697 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903698 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [repair_post_id] => 1
+    [repair_type_id] => 4
+    [state] => 2
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903698 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND repair_post_id=1  AND repair_type_id=4  AND state=2  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903699 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903699 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903699 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903701 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903701 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903701 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903706 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [repair_post_id] => 1
+    [repair_type_id] => 4
+    [state] => 1
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903706 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND repair_post_id=1  AND repair_type_id=4  AND state=1  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903707 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [repair_post_id] => 1
+    [repair_type_id] => 4
+    [state] => 2
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903707 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND repair_post_id=1  AND repair_type_id=4  AND state=2  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903710 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903710 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903710 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903721 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903721 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903721 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903727 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903727 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903727 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903741 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903741 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903741 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903755 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903755 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903755 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903757 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903757 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903757 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903788 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903788 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [repair_post_id] => 1
+    [repair_type_id] => 4
+    [state] => 2
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903788 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND repair_post_id=1  AND repair_type_id=4  AND state=2  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903790 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [repair_post_id] => 1
+    [repair_type_id] => 4
+    [state] => 0
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903790 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND repair_post_id=1  AND repair_type_id=4  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903791 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903791 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [repair_post_id] => 1
+    [repair_type_id] => 4
+    [state] => 0
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903791 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND repair_post_id=1  AND repair_type_id=4  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903792 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [repair_post_id] => 1
+    [repair_type_id] => 4
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903792 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND repair_post_id=1  AND repair_type_id=4  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903797 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903797 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [repair_post_id] => 1
+    [repair_type_id] => 4
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903797 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND repair_post_id=1  AND repair_type_id=4  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903812 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [repair_post_id] => 3
+    [repair_type_id] => 11
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903812 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND repair_post_id=3  AND repair_type_id=11  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903814 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903814 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [repair_post_id] => 3
+    [repair_type_id] => 11
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456903814 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND repair_post_id=3  AND repair_type_id=11  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904011 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904011 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [repair_post_id] => 3
+    [repair_type_id] => 11
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904011 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND repair_post_id=3  AND repair_type_id=11  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904014 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [repair_post_id] => 1
+    [repair_type_id] => 1
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904014 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND repair_post_id=1  AND repair_type_id=1  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904015 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904015 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [repair_post_id] => 1
+    [repair_type_id] => 1
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904015 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND repair_post_id=1  AND repair_type_id=1  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904017 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [repair_post_id] => 3
+    [repair_type_id] => 11
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904017 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND repair_post_id=3  AND repair_type_id=11  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904019 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904019 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904020 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904020 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904020 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904113 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904113 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904113 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904114 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904114 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904114 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904115 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904115 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904117 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904117 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904117 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904119 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904119 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904126 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [user_target_id] => 2
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904126 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND user_target_id=2  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904129 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904129 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [user_target_id] => 2
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904129 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND user_target_id=2  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904130 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904131 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [user_target_id] => 2
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904131 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND user_target_id=2  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904274 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904274 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [user_target_id] => 2
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904274 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND user_target_id=2  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904277 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904277 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [user_target_id] => 2
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904277 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND user_target_id=2  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904340 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904340 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [user_target_id] => 2
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904340 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND user_target_id=2  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904411 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904411 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [user_target_id] => 2
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904411 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND user_target_id=2  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904425 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904425 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [user_target_id] => 2
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904425 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND user_target_id=2  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904461 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904461 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [user_target_id] => 2
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904461 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND user_target_id=2  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904470 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904470 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [user_target_id] => 2
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904470 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND user_target_id=2  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904505 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904505 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [user_target_id] => 2
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904505 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND user_target_id=2  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904506 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904506 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [user_target_id] => 2
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904506 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND user_target_id=2  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904516 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904516 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [user_target_id] => 2
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904516 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND user_target_id=2  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904554 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904554 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [user_target_id] => 2
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904554 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND user_target_id=2  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904562 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [user_target_id] => 2
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904562 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND user_target_id=2  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904572 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904572 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [user_target_id] => 2
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904572 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND user_target_id=2  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904575 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [user_target_id] => 2
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904575 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND user_target_id=2  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904741 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904741 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [user_target_id] => 2
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904741 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND user_target_id=2  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904755 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904755 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904755 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904755 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904755 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904763 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [user_target_id] => 2
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904763 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND user_target_id=2  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904769 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904769 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904769 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904770 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904770 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904841 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904841 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904841 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904845 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904845 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904845 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904851 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904851 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904851 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904853 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904853 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904853 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904894 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904894 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904894 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904904 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [user_target_id] => 2
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904904 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND user_target_id=2  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904907 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904907 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [user_target_id] => 2
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904907 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND user_target_id=2  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904920 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904920 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [user_target_id] => 2
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904920 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND user_target_id=2  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904979 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904980 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [user_target_id] => 2
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904980 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND user_target_id=2  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904981 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904981 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [user_target_id] => 2
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904981 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND user_target_id=2  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904994 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904994 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [user_target_id] => 2
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904994 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND user_target_id=2  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904996 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904996 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [user_target_id] => 2
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456904996 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND user_target_id=2  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456905039 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456905039 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [user_target_id] => 2
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456905039 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND user_target_id=2  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456905042 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [user_target_id] => 2
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456905042 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND user_target_id=2  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456905047 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456905047 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [user_target_id] => 2
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456905047 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND user_target_id=2  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456905049 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [user_target_id] => 2
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456905049 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND user_target_id=2  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456905116 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456905116 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [user_target_id] => 2
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456905116 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND user_target_id=2  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456905116 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456905116 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456905117 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456905117 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456905117 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456905225 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456905225 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456905225 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456905226 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456905226 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456905226 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456905233 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456905234 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456905234 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456905235 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456905235 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456905235 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456905242 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456905242 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456905242 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456905243 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456905243 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456905243 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456905250 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456905250 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456905250 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456905252 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [user_target_id] => 2
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456905252 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND user_target_id=2  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456905254 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456905254 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [user_target_id] => 2
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456905254 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  AND user_target_id=2  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456905258 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456905258 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456905261 - source in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456905261 - Array
+(
+    [from] => 2016-02-29 19:00:00
+    [to] => 2016-03-31 19:00:00
+    [utc_offset] => -300
+    [browser_timezone] => Asia/Karachi
+)
+ in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22
+1456905261 - SELECT * FROM :table WHERE 1 AND startdatetime>='2016-02-29 19:00:00'  AND enddatetime<='2016-03-31 19:00:00'  in /raid/vugluskr/projects/_autoservice/app/libs/__logs.php on line 22

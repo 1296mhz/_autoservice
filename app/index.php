@@ -135,7 +135,7 @@ Macaw::post('/users/(:any)/(:any)', function($field, $query)
 {
     $user = checkAuth();
 
-    Application::sendJson( fetchSource('User', $field, $query, [ "name" ]) );
+    Application::sendJson( fetchSource('User', $field, $query, [ "name", "id" ]) );
 });
 
 function processForm( $data, $user )

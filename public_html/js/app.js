@@ -325,14 +325,6 @@ function CalendarController()
 		};
 
 		/**
-		 * Проверка заполнения формы
-		 */
-		FormController.prototype.validateForm = function()
-		{
-
-		};
-
-		/**
 		 * Инициализация формы
 		 */
 		FormController.prototype.init = function()
@@ -821,7 +813,9 @@ function CalendarController()
 		// state
 		_fillStateSelect();
 
-		this.filter = {};
+		this.filter = store("filter") || {};
+
+		this.calendar.setFilter( this.filter );
 
 		var _self = this;
 
@@ -829,8 +823,6 @@ function CalendarController()
 		{
 			var _selectedValue = $(this.options[e.target.selectedIndex]).val(),
 				_repair = _selectedValue.split(":");
-
-			console.log(_repair)
 
 			if( _selectedValue == -1 )
 			{
@@ -850,6 +842,7 @@ function CalendarController()
 				_self.filter["repair_type_id"] = _repair[1];
 			}
 
+			store("filter", _self.filter);
 			_self.calendar.setFilter( _self.filter );
 			_self.calendar.view();
 		});
@@ -871,6 +864,7 @@ function CalendarController()
 				_self.filter["state"] = _selectedValue;
 			}
 
+			store("filter", _self.filter);
 			_self.calendar.setFilter( _self.filter );
 			_self.calendar.view();
 		});
@@ -914,9 +908,33 @@ function CalendarController()
 				}
 			}
 
+			store("filter", _self.filter);
 			_self.calendar.setFilter( _self.filter );
 			_self.calendar.view();
 		});
+
+
+		if( this.filter["state"] )
+		{
+			$('#state_select').val( this.filter["state"] );
+		}
+
+		if( this.filter["repair_post_id"] && this.filter["repair_type_id"] )
+		{
+			$('#repair_select').val( this.filter["repair_post_id"] + ":" + this.filter["repair_type_id"] );
+		}
+
+		if( this.filter["user_target_id"] )
+		{
+			$.ajax({
+				type : "POST",
+				url : '/users/id/' + this.filter["user_target_id"],
+				success : function(data)
+				{
+					$('#user_select').val(data[0].name);
+				}.bind(this)
+			});
+		}
 
 
 		$('.selectpicker-ext').selectpicker();
