@@ -992,7 +992,7 @@ function CalendarController()
 		$('.btn-exit').off('click').on('click', this.handleExitButtonClick.bind(this));
 
 
-		this.calendar.view();
+		this.calendar.view('day');
 	};
 
 	this.loadStatic = function( callback )

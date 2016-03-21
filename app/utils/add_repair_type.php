@@ -7,6 +7,8 @@ if( !$argv || count($argv) < 3 )
     exit(1);
 }
 
+print "add_repair_type: {$argv[1]} {$argv[2]}";
+
 $newRepairType = new RepairType();
 $newRepairType->repair_post = intval($argv[1]);
 $newRepairType->name = $argv[2];

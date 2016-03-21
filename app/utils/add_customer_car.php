@@ -7,6 +7,9 @@ if( !$argv || count($argv) < 5 )
     exit(1);
 }
 
+
+print "add_customer_car: {$argv[1]} {$argv[2]} {$argv[3]} {$argv[4]}";
+
 $newCustomerCar = new CustomerCar();
 $newCustomerCar->name = $argv[1];
 $newCustomerCar->mileage = $argv[2];

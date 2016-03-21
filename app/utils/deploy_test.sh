@@ -2,7 +2,7 @@
 php migrate_run.php
 
 php add_user.php vugluskr admin 123456
-php add_user.php "Залупов Григоий Семенович" manager 654321
+php add_user.php "Петров Максим" manager 654321
 php add_user.php "Двинских Андрей Станиславович" rat 123
 php add_user.php "Зайцев Сергей Валерьевич" rat 123
 php add_user.php "Константинов Евгений Алексеевич" rat 123

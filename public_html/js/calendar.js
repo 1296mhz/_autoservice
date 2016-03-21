@@ -933,8 +933,6 @@ if(!String.prototype.formatNum) {
 
 						_.extend(params, self.filter || {});
 
-						console.log(params)
-
 						if(browser_timezone.length) {
 							params.browser_timezone = browser_timezone;
 						}

@@ -7,6 +7,8 @@ if( !$argv || count($argv) < 2 )
     exit(1);
 }
 
+print "add_repair_post: {$argv[1]}";
+
 $newRepairPost = new RepairPost();
 $newRepairPost->name = $argv[1];
 $newRepairPost->save();
